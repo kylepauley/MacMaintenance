@@ -162,6 +162,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{13, 40}, {674, 424}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="405634264"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
@@ -176,6 +177,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{522, 323}, {52, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="883562933"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -203,6 +205,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 333}, {348, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="400822439"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -238,6 +241,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{574, 323}, {69, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="629110360"/>
 												<int key="NSViewLayerContentsRedrawPolicy">2</int>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -266,6 +270,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 358}, {196, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="345696835"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -285,6 +290,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 308}, {168, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="957144390"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -304,6 +310,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 283}, {392, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="135924061"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -323,6 +330,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{574, 273}, {69, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="645498180"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -346,6 +354,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{522, 273}, {52, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="701761941"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -369,6 +378,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 258}, {279, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="570473728"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -388,6 +398,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 233}, {434, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="25934833"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -407,6 +418,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{574, 223}, {69, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="223951755"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -430,6 +442,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{522, 223}, {52, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="810815745"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -453,6 +466,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 208}, {199, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="997594860"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -472,6 +486,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 183}, {422, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="306480662"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -491,6 +506,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{574, 173}, {69, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="535388824"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -514,6 +530,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{522, 173}, {52, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="254240726"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -537,6 +554,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 143}, {248, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="99865173"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -556,6 +574,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 118}, {497, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="436179022"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -575,6 +594,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{522, 108}, {52, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1026709195"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -598,6 +618,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{574, 108}, {69, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="740524680"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -621,6 +642,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 168}, {544, 14}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="697446982"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -644,6 +666,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 93}, {291, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="455863524"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -663,6 +686,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 68}, {411, 17}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="761444224"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -682,7 +706,8 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{574, 58}, {69, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
-												<reference key="NSNextKeyView" ref="845507873"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="842867672"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="608429703">
@@ -705,6 +730,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{522, 58}, {52, 32}}</string>
 												<reference key="NSSuperview" ref="405634264"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="481078321"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -726,6 +752,7 @@
 										</array>
 										<string key="NSFrame">{{10, 33}, {654, 378}}</string>
 										<reference key="NSSuperview" ref="842867672"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="980038248"/>
 										<string key="NSReuseIdentifierKey">_NS:11</string>
 									</object>
@@ -1737,7 +1764,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{14, 104}, {626, 271}}</string>
 												<reference key="NSSuperview" ref="16321751"/>
-												<reference key="NSNextKeyView" ref="845507873"/>
+												<reference key="NSNextKeyView" ref="842867672"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<string key="NSAntiCompressionPriority">{250, 750}</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1751,17 +1778,18 @@ IHNpbmQgYmVyZWl0cyBpbSBTeXN0ZW0gaW1wbGVtZW50aWVydCwga8O2bm5lbiBqZWRvY2ggbWVpc3Qg
 bnVyIMO8YmVyIFRlcm1pbmFsIEJlZmVobGUgKGRlKWFrdGl2aWVydCB3ZXJkZW4uIERhbWl0IGRpZXMg
 ZWluZmFjaGVyIHVuZCDDvGJlcnNpY2h0bGljaGVyIGFuIGVpbmVyIFN0ZWxsZSB2ZXJmw7xnYmFyIGlz
 dCB3dXJkZSBNYWNNYWludGVuYW5jZSBlcnN0ZWxsdC4KCkFsbGUgTWFjIE9TIFggU3RhbmRhcmR3ZXJ0
-ZSBzaW5kIHNpY2hlcmhlaXRzaGFsYmVyICJmZXR0IiBtYXJraWVydC4KCldpY2h0aWc6IE1hY01haW50
-ZW5hY2UgaXN0IGVpbiBIaWxmc3dlcmt6ZXVnIGbDvHIgZGVuIE5vdGZhbGwuIEVzIHNvbGx0ZSBkYWhl
-ciBhdWNoIGltbWVyIG1pdCBCZWRhY2h0IGVpbmdlc2V0enQgd2VyZGVuLiBFcnN0ZWxsdCB1bmQgZ2Vz
-dGVzdGV0IHVudGVyIE1hYyBPUyBYIDEwLjcuIEljaCDDvGJlcm5laG1lIGtlaW5lcmxlaSBIYWZ0dW5n
-IHdlZGVyIGbDvHIgU2Now6RkZW4gb2RlciBQcm9ibGVtZSBkdXJjaCBkaWUgTnV0enVuZyBkaWVzZXIg
-U29mdHdhcmUgbm9jaCBnYXJhbnRpZXJlIGljaCwgZGFzcyBkaWUgU29mdHdhcmUgYXVmIGFuZGVyZW4g
-VmVyc2lvbmVuIHZvbiBNYWMgT1MgWCBlaW53YW5kZnJlaSBmdW5rdGlvbmllcnQuIFp1IElocmVyIFNp
-Y2hlcmhlaXQgc29sbHRlbiBTaWUsIGF1Y2ggdW5hYmjDpG5naWcgdm9uIGRlciBCZW51dHp1bmcgZGll
-c2VyIFNvZnR3YXJlLCByZWdlbG3DpMOfaWcgZWluZSBEYXRlbnNpY2hlcnVuZyBkdXJjaGbDvGhyZW4u
-IEFsbGUgdm9yaGFuZGVuZW4gRnVua3Rpb25lbiB3dXJkZW4gdm9uIG1pciBhdWYgRnVua3Rpb24gZ2V0
-ZXN0ZXQuA</bytes>
+ZSBzaW5kIHNpY2hlcmhlaXRzaGFsYmVyICJmZXR0IiBtYXJraWVydC4gRWluaWdlIMOEbmRlcnVuZ2Vu
+IGRlciBFaW5zdGVsbHVuZ2VuIGVyZm9yZGVybiBlaW5lbiBOZXVzdGFydCBkZXMgU3lzdGVtcyB1bSBz
+aWNodGJhciB6dSB3ZXJkZW4uCgpXaWNodGlnOiBNYWNNYWludGVuYWNlIGlzdCBlaW4gSGlsZnN3ZXJr
+emV1ZyBmw7xyIGRlbiBOb3RmYWxsLiBFcyBzb2xsdGUgZGFoZXIgYXVjaCBpbW1lciBtaXQgQmVkYWNo
+dCBlaW5nZXNldHp0IHdlcmRlbi4gRXJzdGVsbHQgdW5kIGdlc3Rlc3RldCB1bnRlciBNYWMgT1MgWCAx
+MC43LiBJY2ggw7xiZXJuZWhtZSBrZWluZXJsZWkgSGFmdHVuZyB3ZWRlciBmw7xyIFNjaMOkZGVuIG9k
+ZXIgUHJvYmxlbWUgZHVyY2ggZGllIE51dHp1bmcgZGllc2VyIFNvZnR3YXJlIG5vY2ggZ2FyYW50aWVy
+ZSBpY2gsIGRhc3MgZGllIFNvZnR3YXJlIGF1ZiBhbmRlcmVuIFZlcnNpb25lbiB2b24gTWFjIE9TIFgg
+ZWlud2FuZGZyZWkgZnVua3Rpb25pZXJ0LiBadSBJaHJlciBTaWNoZXJoZWl0IHNvbGx0ZW4gU2llLCBh
+dWNoIHVuYWJow6RuZ2lnIHZvbiBkZXIgQmVudXR6dW5nIGRpZXNlciBTb2Z0d2FyZSwgcmVnZWxtw6TD
+n2lnIGVpbmUgRGF0ZW5zaWNoZXJ1bmcgZHVyY2hmw7xocmVuLiBBbGxlIHZvcmhhbmRlbmVuIEZ1bmt0
+aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</bytes>
 													</object>
 													<object class="NSFont" key="NSSupport" id="598994528">
 														<string key="NSName">LucidaGrande</string>
@@ -1797,6 +1825,7 @@ ZXN0ZXQuA</bytes>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{592, 12}, {94, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="34161685">
@@ -1819,6 +1848,7 @@ ZXN0ZXQuA</bytes>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{17, 22}, {146, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="191791604"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1838,6 +1868,7 @@ ZXN0ZXQuA</bytes>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{574, 22}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="330692864"/>
 							<string key="NSReuseIdentifierKey">_NS:945</string>
 							<int key="NSpiFlags">28938</int>
@@ -1846,6 +1877,7 @@ ZXN0ZXQuA</bytes>
 					</array>
 					<string key="NSFrameSize">{700, 470}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="842867672"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1360, 746}}</string>
@@ -7711,7 +7743,206 @@ ZXN0ZXQuA</bytes>
 			<nil key="sourceID"/>
 			<int key="maxID">2121</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">AppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="AirDropAktivierenJA:">id</string>
+						<string key="AirDropAktivierenNEIN:">id</string>
+						<string key="AppleSetupDoneLoeschenJA:">id</string>
+						<string key="AppleSetupDoneLoeschenNEIN:">id</string>
+						<string key="AusgeblendeteProgrammeDurchsichtigJA:">id</string>
+						<string key="AusgeblendeteProgrammeDurchsichtigNEIN:">id</string>
+						<string key="CUPSconfigadmin:">id</string>
+						<string key="Cachesloeschen:">id</string>
+						<string key="Dockim2DModusJA:">id</string>
+						<string key="Dockim2DModusNEIN:">id</string>
+						<string key="DrucksystemZuruecksetzen:">id</string>
+						<string key="EntfernteCDDVDaktivierenJA:">id</string>
+						<string key="EntfernteCDDVDaktivierenNEIN:">id</string>
+						<string key="ErweiterterSpeichernUnterDialogJA:">id</string>
+						<string key="ErweiterterSpeichernUnterDialogNEIN:">id</string>
+						<string key="FinderLibraryOrdnerJA:">id</string>
+						<string key="FinderLibraryOrdnerNEIN:">id</string>
+						<string key="FinderVersteckteDateienJA:">id</string>
+						<string key="FinderVersteckteDateienNEIN:">id</string>
+						<string key="InaktivenRAMleeren:">id</string>
+						<string key="LaunchServiceDBZuruecksetzen:">id</string>
+						<string key="NachfragePapierkorbLeerenJA:">id</string>
+						<string key="NachfragePapierkorbLeerenNEIN:">id</string>
+						<string key="PHP5imApacheAktivierenJA:">id</string>
+						<string key="PHP5imApacheAktivierenNEIN:">id</string>
+						<string key="PeriodischeSkripteStarten:">id</string>
+						<string key="SchriftartenCachesNeuErstellen:">id</string>
+						<string key="SpotlightIndexNeuAufbauen:">id</string>
+						<string key="TimeMachineNetzlaufwerkeJA:">id</string>
+						<string key="TimeMachineNetzlaufwerkeNEIN:">id</string>
+						<string key="ZugriffsrechteReparieren:">id</string>
+						<string key="applicationShouldTerminate:">id</string>
+						<string key="applicationWillFinishLaunching:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="AirDropAktivierenJA:">
+							<string key="name">AirDropAktivierenJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="AirDropAktivierenNEIN:">
+							<string key="name">AirDropAktivierenNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="AppleSetupDoneLoeschenJA:">
+							<string key="name">AppleSetupDoneLoeschenJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="AppleSetupDoneLoeschenNEIN:">
+							<string key="name">AppleSetupDoneLoeschenNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="AusgeblendeteProgrammeDurchsichtigJA:">
+							<string key="name">AusgeblendeteProgrammeDurchsichtigJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="AusgeblendeteProgrammeDurchsichtigNEIN:">
+							<string key="name">AusgeblendeteProgrammeDurchsichtigNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="CUPSconfigadmin:">
+							<string key="name">CUPSconfigadmin:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="Cachesloeschen:">
+							<string key="name">Cachesloeschen:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="Dockim2DModusJA:">
+							<string key="name">Dockim2DModusJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="Dockim2DModusNEIN:">
+							<string key="name">Dockim2DModusNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="DrucksystemZuruecksetzen:">
+							<string key="name">DrucksystemZuruecksetzen:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="EntfernteCDDVDaktivierenJA:">
+							<string key="name">EntfernteCDDVDaktivierenJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="EntfernteCDDVDaktivierenNEIN:">
+							<string key="name">EntfernteCDDVDaktivierenNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="ErweiterterSpeichernUnterDialogJA:">
+							<string key="name">ErweiterterSpeichernUnterDialogJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="ErweiterterSpeichernUnterDialogNEIN:">
+							<string key="name">ErweiterterSpeichernUnterDialogNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="FinderLibraryOrdnerJA:">
+							<string key="name">FinderLibraryOrdnerJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="FinderLibraryOrdnerNEIN:">
+							<string key="name">FinderLibraryOrdnerNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="FinderVersteckteDateienJA:">
+							<string key="name">FinderVersteckteDateienJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="FinderVersteckteDateienNEIN:">
+							<string key="name">FinderVersteckteDateienNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="InaktivenRAMleeren:">
+							<string key="name">InaktivenRAMleeren:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="LaunchServiceDBZuruecksetzen:">
+							<string key="name">LaunchServiceDBZuruecksetzen:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="NachfragePapierkorbLeerenJA:">
+							<string key="name">NachfragePapierkorbLeerenJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="NachfragePapierkorbLeerenNEIN:">
+							<string key="name">NachfragePapierkorbLeerenNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="PHP5imApacheAktivierenJA:">
+							<string key="name">PHP5imApacheAktivierenJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="PHP5imApacheAktivierenNEIN:">
+							<string key="name">PHP5imApacheAktivierenNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="PeriodischeSkripteStarten:">
+							<string key="name">PeriodischeSkripteStarten:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="SchriftartenCachesNeuErstellen:">
+							<string key="name">SchriftartenCachesNeuErstellen:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="SpotlightIndexNeuAufbauen:">
+							<string key="name">SpotlightIndexNeuAufbauen:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="TimeMachineNetzlaufwerkeJA:">
+							<string key="name">TimeMachineNetzlaufwerkeJA:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="TimeMachineNetzlaufwerkeNEIN:">
+							<string key="name">TimeMachineNetzlaufwerkeNEIN:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="ZugriffsrechteReparieren:">
+							<string key="name">ZugriffsrechteReparieren:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="applicationShouldTerminate:">
+							<string key="name">applicationShouldTerminate:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="applicationWillFinishLaunching:">
+							<string key="name">applicationWillFinishLaunching:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">spinner</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">spinner</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">spinner</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AppDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSLayoutConstraint</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
