@@ -1,6 +1,9 @@
 Version 3.0.1
-- Mountain Lion: Weboberfläche für CUPS aktivieren
+- Weboberfläche für CUPS aktivieren falls nicht aktiviert
 - Komplett getestet unter Mac OS X 10.8+ Mountain Lion
+- Nun kompatibel mit Mac OS X 10.6+ Snow Leopard
+- Komplett getestet unter Mac OS X 10.6+ Snow Leopard
+- Einige Anpassungen der Texte in der grafischen Oberfläche
 
 Version 3.0
 - von Grund auf neu erstellt
