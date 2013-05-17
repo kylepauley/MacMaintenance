@@ -1,6 +1,6 @@
 --
 --  AppDelegate.applescript
---  MacMaintenance 3
+--  MacMaintenance
 --
 --  Created by Philipp on 15.05.13.
 --  Copyright (c) 2013 Mr Maintenance. All rights reserved.
