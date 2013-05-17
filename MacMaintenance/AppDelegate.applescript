@@ -193,9 +193,9 @@ script AppDelegate
     -- Drucksystem Admin öffnen
     on CUPSconfigadmin_(sender)
         spinner's startAnimation_(sender)
+        do shell script "cupsctl WebInterface=yes"
         tell application "Safari"
             activate
-            #close windows
             open location "http://127.0.0.1:631"
         end tell
         spinner's stopAnimation_(sender)
