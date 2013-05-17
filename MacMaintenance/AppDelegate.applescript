@@ -193,7 +193,7 @@ script AppDelegate
     -- Drucksystem Admin öffnen
     on CUPSconfigadmin_(sender)
         spinner's startAnimation_(sender)
-        do shell script "if [ `cupsctl | grep WebInterface` != "WebInterface=yes" ]; then cupsctl WebInterface=yes; fi"
+        do shell script "if [ `cupsctl | grep WebInterface` != 'WebInterface=yes' ]; then cupsctl WebInterface=yes; fi"
         do shell script ""
         tell application "Safari"
             activate
