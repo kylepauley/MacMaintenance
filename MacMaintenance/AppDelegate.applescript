@@ -193,7 +193,8 @@ script AppDelegate
     -- Drucksystem Admin öffnen
     on CUPSconfigadmin_(sender)
         spinner's startAnimation_(sender)
-        do shell script "cupsctl WebInterface=yes"
+        do shell script "if [ `cupsctl | grep WebInterface` != "WebInterface=yes" ]; then cupsctl WebInterface=yes; fi"
+        do shell script ""
         tell application "Safari"
             activate
             open location "http://127.0.0.1:631"
