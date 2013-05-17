@@ -1025,7 +1025,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{573, 175}, {70, 32}}</string>
 												<reference key="NSSuperview" ref="473797595"/>
-												<reference key="NSNextKeyView" ref="845507873"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="566302729">
@@ -1846,7 +1845,7 @@ ZXN0ZXQuA</bytes>
 						<object class="NSTextField" id="845507873">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 22}, {177, 17}}</string>
+							<string key="NSFrame">{{17, 22}, {134, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="191791604"/>
@@ -1855,7 +1854,7 @@ ZXN0ZXQuA</bytes>
 							<object class="NSTextFieldCell" key="NSCell" id="884049533">
 								<int key="NSCellFlags">68157504</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">MacMaintenance 3.0 Beta 3</string>
+								<string key="NSContents">MacMaintenance 3.0</string>
 								<reference key="NSSupport" ref="598994528"/>
 								<string key="NSCellIdentifier">_NS:1535</string>
 								<reference key="NSControlView" ref="845507873"/>
@@ -1880,7 +1879,7 @@ ZXN0ZXQuA</bytes>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="842867672"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1360, 768}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1360, 746}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">NO</bool>
 			</object>
