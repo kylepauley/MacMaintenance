@@ -251,10 +251,25 @@ script AppDelegate
     on PHP5imApacheAktivierenNEIN_(sender)
         spinner's startAnimation_(sender)
         try
-            do shell script "mv /etc/apache2/httpd.conf.backup /etc/apache2/httpd.conf" with administrator privileges
+            do shell script "if [ -f /etc/apache2/httpd.conf.backup ]; then mv /etc/apache2/httpd.conf.backup /etc/apache2/httpd.conf; fi" with administrator privileges
         end try
         spinner's stopAnimation_(sender)
     end PHP5imApacheAktivierenNEIN_
+    
+    -- FTP Dateifreigabe wieder aktivieren (ab Lion)
+    on FTPDateifreigabeAktivierenJA_(sender)
+        spinner's startAnimation_(sender)
+        do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.backup && cat /System/Library/LaunchDaemons/ftp.plist.backup | sed -e 's/Disabled/Enabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+        do shell script "launchctl load -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+        spinner's stopAnimation_(sender)
+    end FTPDateifreigabeAktivierenJA_
+    
+    on FTPDateifreigabeAktivierenNEIN_(sender)
+        spinner's startAnimation_(sender)
+        do shell script "launchctl unload -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+        do shell script "if [ -f /System/Library/LaunchDaemons/ftp.plist.back ]; then mv /System/Library/LaunchDaemons/ftp.plist.backup /System/Library/LaunchDaemons/ftp.plist; fi" with administrator privileges
+        spinner's stopAnimation_(sender)
+    end FTPDateifreigabeAktivierenNEIN_
     
     -- MacMaintenance END
 	

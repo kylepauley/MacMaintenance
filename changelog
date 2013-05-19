@@ -1,3 +1,7 @@
+Version 3.0.2
+- FTP-Dateifreigabe wieder aktivieren (ab Mac OS X 10.7 Lion möglich)
+- Zusätzliche Prüfung bei Deaktivierung verschiedener Funktionen
+
 Version 3.0.1
 - Weboberfläche für CUPS aktivieren falls nicht aktiviert
 - Komplett getestet unter Mac OS X 10.8+ Mountain Lion
