@@ -60,39 +60,39 @@ script AppDelegate
     -- Entfernte CD/DVD aktivieren
     on EntfernteCDDVDaktivierenJA_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean TRUE && killall Finder"
+        do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean TRUE && defaults write com.apple.NetworkBrowser ODSSupported -bool TRUE && killall Finder"
         spinner's stopAnimation_(sender)
     end EntfernteCDDVDaktivierenJA_
     
     on EntfernteCDDVDaktivierenNEIN_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean FALSE && killall Finder"
+        do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean FALSE && defaults write com.apple.NetworkBrowser ODSSupported -bool FALSE && killall Finder"
         spinner's stopAnimation_(sender)
     end EntfernteCDDVDaktivierenNEIN_
     
     -- Erweiterter Speichern unter Dialog
     on ErweiterterSpeichernUnterDialogJA_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE"
+        do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE && killall Finder"
         spinner's stopAnimation_(sender)
     end ErweiterterSpeichernUnterDialogJA_
     
     on ErweiterterSpeichernUnterDialogNEIN_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean FALSE"
+        do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean FALSE && killall Finder"
         spinner's stopAnimation_(sender)
     end ErweiterterSpeichernUnterDialogNEIN_
     
     -- AirDrop auf nicht unterstützten Macs aktivieren
     on AirDropAktivierenJA_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean TRUE"
+        do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean TRUE && killall Finder"
         spinner's stopAnimation_(sender)
     end AirDropAktivierenJA_
     
     on AirDropAktivierenNEIN_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean FALSE"
+        do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean FALSE && killall Finder"
         spinner's stopAnimation_(sender)
     end AirDropAktivierenNEIN_
     
