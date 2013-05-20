@@ -30,6 +30,8 @@
 		17D280331743F05E002155A1 /* MacMaintenance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MacMaintenance-Info.plist"; sourceTree = "<group>"; };
 		17D280371743F05E002155A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17D280391743F05E002155A1 /* MacMaintenance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacMaintenance-Prefix.pch"; sourceTree = "<group>"; };
+		17DF561517497A7000ADFB72 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		17DF561617497A7000ADFB72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1727778C1745326600D19768 /* de */,
+				17DF561517497A7000ADFB72 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				174618FF1743FD5700F6DAFD /* de */,
+				17DF561617497A7000ADFB72 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
