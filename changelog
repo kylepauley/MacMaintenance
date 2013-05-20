@@ -1,3 +1,9 @@
+Version 3.0.5
+- "Drucksystem zurücksetzen" optimiert
+- Funktionen die unter Snow Leopard nicht verfügbar sind, wurden dort deaktivert
+- Einige Anpassungen der Texte in der grafischen Oberfläche
+- Fehlermeldungen in der Konsole beim Start wurden behoben (siehe issues)
+
 Version 3.0.4
 - Angepasste deutsche Übersetzung
 - Komplette Übersetzung auf Englisch

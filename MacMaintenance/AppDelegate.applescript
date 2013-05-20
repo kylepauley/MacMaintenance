@@ -9,9 +9,20 @@
 script AppDelegate
 	property parent : class "NSObject"
     property spinner : missing value
+    property buttonPurgeMemory : missing value
+    property buttonAirDropEnable : missing value
+    property buttonAirDropDisable : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
-		-- Insert code here to initialize your application before any files are opened 
+		-- Insert code here to initialize your application before any files are opened
+        
+        set productVersion to do shell script "sw_vers -productVersion"
+        -- Deaktiviere Funktionen die unter Snow Leopard nicht verfügbar sind
+        if productVersion contains "10.6"
+            buttonPurgeMemory's setEnabled_(false)
+            buttonAirDropEnable's setEnabled_(false)
+            buttonAirDropDisable's setEnabled_(false)
+        end if
 	end applicationWillFinishLaunching_
 
     -- MacMaintenance BEGIN
@@ -140,7 +151,9 @@ script AppDelegate
     -- Inaktiven Bereich im Arbeitsspeicher aufräumen
     on InaktivenRAMleeren_(sender)
         spinner's startAnimation_(sender)
-        do shell script "purge"
+        try
+            do shell script "purge"
+        end try
         spinner's stopAnimation_(sender)
     end InaktivenRAMleeren_
     
@@ -185,7 +198,7 @@ script AppDelegate
     on DrucksystemZuruecksetzen_(sender)
         spinner's startAnimation_(sender)
         try
-            do shell script "launchctl stop org.cups.cupsd && mv /etc/cups/cupsd.conf /etc/cups/cupsd.conf.backup && cp /etc/cups/cupsd.conf.default /etc/cups/cupsd.conf && mv /etc/cups/printers.conf /etc/cups/printers.conf.backup && launchctl start org.cups.cupsd" with administrator privileges
+            do shell script "launchctl stop org.cups.cupsd && mv /etc/cups/cupsd.conf /etc/cups/cupsd.conf.backup && cp /etc/cups/cupsd.conf.default /etc/cups/cupsd.conf && if [ -f /etc/cups/printers.conf ]; then mv /etc/cups/printers.conf /etc/cups/printers.conf.backup; fi && rm -rf ~/Library/Printers/ && launchctl start org.cups.cupsd" with administrator privileges
         end try
         spinner's stopAnimation_(sender)
     end DrucksystemZuruecksetzen_

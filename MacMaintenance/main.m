@@ -12,6 +12,10 @@
 
 int main(int argc, char *argv[])
 {
+    @autoreleasepool {
+        
     [[NSBundle mainBundle] loadAppleScriptObjectiveCScripts];
     return NSApplicationMain(argc, (const char **)argv);
+        
+    }
 }
