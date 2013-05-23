@@ -12,6 +12,7 @@ script AppDelegate
     property buttonPurgeMemory : missing value
     property buttonAirDropEnable : missing value
     property buttonAirDropDisable : missing value
+    property SpeicherplatzCaches : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
@@ -23,10 +24,14 @@ script AppDelegate
             buttonAirDropEnable's setEnabled_(false)
             buttonAirDropDisable's setEnabled_(false)
         end if
+    
+        -- Wie viel Speicherplatz belegen die Caches?
+        set SpeicherplatzCachesinMB to do shell script "du -scm /Library/Caches/ /System/Library/Caches/ ~/Library/Caches/ | grep total | cut -f 1"
+        SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
 	end applicationWillFinishLaunching_
 
     -- MacMaintenance BEGIN
-    
+
     -- ######################## FINDER ########################
     
     -- Versteckte Dateien im Finder anzeigen
@@ -145,6 +150,8 @@ script AppDelegate
             do shell script "rm -rf /Library/Caches/*" with administrator privileges
             do shell script "rm -rf ~/Library/Caches/*" with administrator privileges
         end try
+        set SpeicherplatzCachesinMB to do shell script "du -scm /Library/Caches/ /System/Library/Caches/ ~/Library/Caches/ | grep total | cut -f 1"
+        SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
         spinner's stopAnimation_(sender)
     end Cachesloeschen_
     

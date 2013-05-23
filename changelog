@@ -1,3 +1,6 @@
+Version 3.0.6
+- Caches leeren zeigt nun die aktuelle Belegung des Speicherplatzes an
+
 Version 3.0.5
 - "Drucksystem zurücksetzen" optimiert
 - Funktionen die unter Snow Leopard nicht verfügbar sind, wurden dort deaktivert
