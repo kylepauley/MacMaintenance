@@ -14,6 +14,9 @@
 		17D2802C1743F05E002155A1 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D2802B1743F05E002155A1 /* AppleScriptObjC.framework */; };
 		17D280361743F05E002155A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17D280341743F05E002155A1 /* InfoPlist.strings */; };
 		17D280381743F05E002155A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D280371743F05E002155A1 /* main.m */; };
+		17E41CA2175606F300EC728B /* tabFinder.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E41C9F175606F300EC728B /* tabFinder.png */; };
+		17E41CA3175606F300EC728B /* tabSystem.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E41CA0175606F300EC728B /* tabSystem.png */; };
+		17E41CA4175606F400EC728B /* tabDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E41CA1175606F300EC728B /* tabDock.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		17D280391743F05E002155A1 /* MacMaintenance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacMaintenance-Prefix.pch"; sourceTree = "<group>"; };
 		17DF561517497A7000ADFB72 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		17DF561617497A7000ADFB72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17E41C9F175606F300EC728B /* tabFinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabFinder.png; sourceTree = "<group>"; };
+		17E41CA0175606F300EC728B /* tabSystem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabSystem.png; sourceTree = "<group>"; };
+		17E41CA1175606F300EC728B /* tabDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabDock.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		17D280321743F05E002155A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				17E41C9F175606F300EC728B /* tabFinder.png */,
+				17E41CA0175606F300EC728B /* tabSystem.png */,
+				17E41CA1175606F300EC728B /* tabDock.png */,
 				174618FC1743FB1100F6DAFD /* icon.icns */,
 				17D280331743F05E002155A1 /* MacMaintenance-Info.plist */,
 				17D280341743F05E002155A1 /* InfoPlist.strings */,
@@ -161,6 +170,9 @@
 				17D280361743F05E002155A1 /* InfoPlist.strings in Resources */,
 				174618FD1743FB1100F6DAFD /* icon.icns in Resources */,
 				1727778D1745326600D19768 /* MainMenu.xib in Resources */,
+				17E41CA2175606F300EC728B /* tabFinder.png in Resources */,
+				17E41CA3175606F300EC728B /* tabSystem.png in Resources */,
+				17E41CA4175606F400EC728B /* tabDock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

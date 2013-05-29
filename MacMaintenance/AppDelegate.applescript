@@ -13,6 +13,12 @@ script AppDelegate
     property buttonAirDropEnable : missing value
     property buttonAirDropDisable : missing value
     property SpeicherplatzCaches : missing value
+    property tabView : missing value
+    property tabFinder : missing value
+    property tabDock : missing value
+    property tabCaches : missing value
+    property tabSystem : missing value
+    property tabHinweise : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
@@ -31,6 +37,27 @@ script AppDelegate
 	end applicationWillFinishLaunching_
 
     -- MacMaintenance BEGIN
+
+    -- Tabs per Toolbar ansteuern
+    on selectTabFinder_(sender)
+        tabView's selectTabViewItem_(tabFinder)
+    end selectTabFinder_
+
+    on selectTabDock_(sender)
+        tabView's selectTabViewItem_(tabDock)
+    end selectTabDock_
+
+    on selectTabCaches_(sender)
+        tabView's selectTabViewItem_(tabCaches)
+    end selectTabCaches_
+
+    on selectTabSystem_(sender)
+        tabView's selectTabViewItem_(tabSystem)
+    end selectTabSystem_
+
+    on selectTabHinweise_(sender)
+        tabView's selectTabViewItem_(tabHinweise)
+    end selectTabHinweise_
 
     -- ######################## FINDER ########################
     
