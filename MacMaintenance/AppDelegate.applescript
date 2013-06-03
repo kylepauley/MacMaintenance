@@ -18,10 +18,17 @@ script AppDelegate
     property tabDock : missing value
     property tabCaches : missing value
     property tabSystem : missing value
+    property tabWartung : missing value
     property tabHinweise : missing value
+    property popUpButtonWartung : missing value
+    property aktionNachWartung : missing value
+    property macMaintenanceVersion : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
+        
+        set projectVersion to current application's NSBundle's mainBundle()'s objectForInfoDictionaryKey_("CFBundleShortVersionString")
+        macMaintenanceVersion's setStringValue_(projectVersion)
         
         set productVersion to do shell script "sw_vers -productVersion"
         -- Deaktiviere Funktionen die unter Snow Leopard nicht verfügbar sind
@@ -54,6 +61,10 @@ script AppDelegate
     on selectTabSystem_(sender)
         tabView's selectTabViewItem_(tabSystem)
     end selectTabSystem_
+
+    on selectTabWartung_(sender)
+        tabView's selectTabViewItem_(tabWartung)
+    end selectTabWartung_
 
     on selectTabHinweise_(sender)
         tabView's selectTabViewItem_(tabHinweise)
@@ -317,7 +328,54 @@ script AppDelegate
         do shell script "if [ -f /System/Library/LaunchDaemons/ftp.plist.back ]; then mv /System/Library/LaunchDaemons/ftp.plist.backup /System/Library/LaunchDaemons/ftp.plist; fi" with administrator privileges
         spinner's stopAnimation_(sender)
     end FTPDateifreigabeAktivierenNEIN_
-    
+
+    -- ######################## WARTUNG ########################
+
+    on wartungAusfuehren_(sender)
+        display dialog (localized string "DialogCloseApps") with icon stop
+        
+        spinner's startAnimation_(sender)
+        
+        set aktionNachWartung to popUpButtonWartung's objectValue()
+        set aktionNachWartung to aktionNachWartung as text
+
+        -- Alle geöffneten Programme schließen
+        tell application "System Events" to set the visible of every process to true
+        set white_list to {"Finder", "MacMaintenance"}
+        try
+            tell application "Finder"
+                set process_list to the name of every process whose visible is true
+            end tell
+            repeat with i from 1 to (number of items in process_list)
+                set this_process to item i of the process_list
+                if this_process is not in white_list then
+                    tell application this_process
+                        quit saving no
+                    end tell
+                end if
+            end repeat
+        end try
+        
+        -- Hier kommt das Wartungsskript hin
+        try
+            -- 0 bedeutet nichts unternehmen
+            if aktionNachWartung contains "0" then
+                do shell script "rm -rf /System/Library/Caches/* ; rm -rf /Library/Caches/* ; rm -rf ~/Library/Caches/* ; periodic daily weekly monthly ; diskutil repairPermissions /" with administrator privileges
+            -- 1 bedeutet sleep
+            else if aktionNachWartung contains "1" then
+                do shell script "rm -rf /System/Library/Caches/* ; rm -rf /Library/Caches/* ; rm -rf ~/Library/Caches/* ; periodic daily weekly monthly ; diskutil repairPermissions /" with administrator privileges
+                tell application "System Events" to sleep
+            -- 2 bedeutet Neu starten
+            else if aktionNachWartung contains "2" then
+                do shell script "rm -rf /System/Library/Caches/* ; rm -rf /Library/Caches/* ; rm -rf ~/Library/Caches/* ; periodic daily weekly monthly ; diskutil repairPermissions / ; shutdown -r now" with administrator privileges
+            -- 3 bedeutet Herunterfahren
+            else if aktionNachWartung contains "3" then
+                do shell script "rm -rf /System/Library/Caches/* ; rm -rf /Library/Caches/* ; rm -rf ~/Library/Caches/* ; periodic daily weekly monthly ; diskutil repairPermissions / ; shutdown -h now" with administrator privileges
+            end if
+        end try
+        spinner's stopAnimation_(sender)
+    end wartungAusfuehren_
+
     -- MacMaintenance END
 	
 	on applicationShouldTerminate_(sender)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171EA5ED175BEAA400E3DA40 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 171EA5EF175BEAA400E3DA40 /* Localizable.strings */; };
 		1727778D1745326600D19768 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1727778B1745326600D19768 /* MainMenu.xib */; };
 		174618FD1743FB1100F6DAFD /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 174618FC1743FB1100F6DAFD /* icon.icns */; };
 		1752D361174414620059E9DA /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 1752D360174414620059E9DA /* AppDelegate.applescript */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		171EA5EE175BEAA400E3DA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		171EA5F0175BEAA800E3DA40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1727778C1745326600D19768 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		174618FC1743FB1100F6DAFD /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		174618FF1743FD5700F6DAFD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 				17D280341743F05E002155A1 /* InfoPlist.strings */,
 				17D280371743F05E002155A1 /* main.m */,
 				17D280391743F05E002155A1 /* MacMaintenance-Prefix.pch */,
+				171EA5EF175BEAA400E3DA40 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 				17E41CA2175606F300EC728B /* tabFinder.png in Resources */,
 				17E41CA3175606F300EC728B /* tabSystem.png in Resources */,
 				17E41CA4175606F400EC728B /* tabDock.png in Resources */,
+				171EA5ED175BEAA400E3DA40 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +196,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		171EA5EF175BEAA400E3DA40 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				171EA5EE175BEAA400E3DA40 /* en */,
+				171EA5F0175BEAA800E3DA40 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		1727778B1745326600D19768 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
