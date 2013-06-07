@@ -149,7 +149,20 @@ script AppDelegate
         do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean FALSE && killall Finder"
         spinner's stopAnimation_(sender)
     end AirDropAktivierenNEIN_
-    
+
+    -- Bildschirmfotos ohne Schatten
+    on BildschirmfotosOhneSchattenJA_(sender)
+        spinner's startAnimation_(sender)
+        do shell script "defaults write com.apple.screencapture disable-shadow -boolean TRUE && killall SystemUIServer && sleep 5"
+        spinner's stopAnimation_(sender)
+    end BildschirmfotosOhneSchattenJA_
+
+    on BildschirmfotosOhneSchattenNEIN_(sender)
+        spinner's startAnimation_(sender)
+        do shell script "defaults write com.apple.screencapture disable-shadow -boolean FALSE && killall SystemUIServer && sleep 5"
+        spinner's stopAnimation_(sender)
+    end BildschirmfotosOhneSchattenNEIN_
+
     -- ######################## DOCK ########################
     
     -- Ausgeblendete Programme durchsichtig anzeigen
