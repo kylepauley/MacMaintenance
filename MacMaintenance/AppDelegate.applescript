@@ -23,10 +23,12 @@ script AppDelegate
     property popUpButtonWartung : missing value
     property aktionNachWartung : missing value
     property macMaintenanceVersion : missing value
+    property toolbar : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
         
+        -- Projektversion für die GUI
         set projectVersion to current application's NSBundle's mainBundle()'s objectForInfoDictionaryKey_("CFBundleShortVersionString")
         macMaintenanceVersion's setStringValue_(projectVersion)
         
@@ -41,6 +43,11 @@ script AppDelegate
         -- Wie viel Speicherplatz belegen die Caches?
         set SpeicherplatzCachesinMB to do shell script "du -scm /Library/Caches/ /System/Library/Caches/ ~/Library/Caches/ | grep total | cut -f 1"
         SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
+    
+        -- Finder Toolbar Objekt hervorheben
+        try
+            toolbar's setSelectedItemIdentifier_("toolbarFinder")
+        end try
 	end applicationWillFinishLaunching_
 
     -- MacMaintenance BEGIN

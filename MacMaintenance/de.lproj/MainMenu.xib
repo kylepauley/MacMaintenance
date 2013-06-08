@@ -393,6 +393,7 @@
 							<string key="NSFrame">{{13, 54}, {674, 460}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="405634264"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="218160543">
@@ -2894,14 +2895,6 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 					<int key="connectionID">2158</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">selectTabFinder:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="645528715"/>
-					</object>
-					<int key="connectionID">2159</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">tabView</string>
 						<reference key="source" ref="976324537"/>
@@ -3028,6 +3021,22 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 						<reference key="destination" ref="1055037990"/>
 					</object>
 					<int key="connectionID">2210</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">selectTabFinder:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="645528715"/>
+					</object>
+					<int key="connectionID">2212</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">toolbar</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="431971110"/>
+					</object>
+					<int key="connectionID">2214</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4701,10 +4710,16 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 				<string key="2151.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2154.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2156.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2156.designableToolbarItemIdentifier">toolbarFinder</string>
+				<boolean value="YES" key="2156.toolbarItem.selectable"/>
 				<string key="2161.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="2161.toolbarItem.selectable"/>
 				<string key="2165.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="2165.toolbarItem.selectable"/>
 				<string key="2168.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="2168.toolbarItem.selectable"/>
 				<string key="2169.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="2169.toolbarItem.selectable"/>
 				<string key="2174.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2175.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2176.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4718,6 +4733,7 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 				<string key="2184.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2185.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2186.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="2186.toolbarItem.selectable"/>
 				<string key="2189.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2190.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2193.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4847,7 +4863,7 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">2210</int>
+			<int key="maxID">2215</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -5094,6 +5110,8 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 						<string key="tabSystem">id</string>
 						<string key="tabView">id</string>
 						<string key="tabWartung">id</string>
+						<string key="toolbar">id</string>
+						<string key="toolbarFinder">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="SpeicherplatzCaches">
@@ -5154,6 +5172,14 @@ cmhhbmRlbmVuIEZ1bmt0aW9uZW4gd3VyZGVuIHZvbiBtaXIgYXVmIEZ1bmt0aW9uIGdldGVzdGV0Lg</
 						</object>
 						<object class="IBToOneOutletInfo" key="tabWartung">
 							<string key="name">tabWartung</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="toolbar">
+							<string key="name">toolbar</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="toolbarFinder">
+							<string key="name">toolbarFinder</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
