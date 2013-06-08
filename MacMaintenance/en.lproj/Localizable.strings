@@ -7,3 +7,4 @@
 */
 
 "DialogCloseApps" = "All running applications will be closed now, all unsaved changes will be lost.";
+"RestartToWork" = "You need to restart your system to see the changes.";

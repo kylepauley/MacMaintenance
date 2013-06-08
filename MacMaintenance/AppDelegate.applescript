@@ -9,10 +9,13 @@
 script AppDelegate
 	property parent : class "NSObject"
     property spinner : missing value
+    
     property buttonPurgeMemory : missing value
-    property buttonAirDropEnable : missing value
-    property buttonAirDropDisable : missing value
+    
     property SpeicherplatzCaches : missing value
+    
+    property toolbar : missing value
+
     property tabView : missing value
     property tabFinder : missing value
     property tabDock : missing value
@@ -20,24 +23,187 @@ script AppDelegate
     property tabSystem : missing value
     property tabWartung : missing value
     property tabHinweise : missing value
+    
     property popUpButtonWartung : missing value
     property aktionNachWartung : missing value
+    
     property macMaintenanceVersion : missing value
-    property toolbar : missing value
+        
+    -- Einstellungen
+    property settingFinderHiddenFiles : missing value
+    property settingFinderLibraryOrdner : missing value
+    property settingPapierkorbWarnung : missing value
+    property settingEntfernteCDDVD : missing value
+    property settingSpeichernUnterDialog : missing value
+    property settingAirDrop : missing value
+    property settingBildschirmfotoSchatten : missing value
+    property settingDockDurchsichtig : missing value
+    property settingDock2D : missing value
+    property settingTimeMachineNetzlaufwerke : missing value
+    property settingInitialSetup : missing value
+    property settingPHP5eingebauterWebserver : missing value
+    property settingFTPwiederAktivieren : missing value
+    
+    -- Checkboxen
+    property checkBoxFinderHiddenFiles : missing value
+    property checkBoxFinderLibraryOrdner : missing value
+    property checkBoxPapierkorbWarnung : missing value
+    property checkBoxEntfernteCDDVD : missing value
+    property checkBoxSpeichernUnterDialog : missing value
+    property checkBoxAirDrop : missing value
+    property checkBoxBildschirmfotoSchatten : missing value
+    property checkBoxDockDurchsichtig : missing value
+    property checkBoxDock2D : missing value
+    property checkBoxTimeMachineNetzlaufwerke : missing value
+    property checkBoxInitialSetup : missing value
+    property checkBoxPHP5eingebauterWebserver : missing value
+    property checkBoxFTPwiederAktivieren : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
+        
+        -- Feststellen welche Einstellungen momentan aktiv sind
+        -- Finder Versteckte Dateien
+        try
+            set settingFinderHiddenFiles to (do shell script "defaults read com.apple.finder AppleShowAllFiles")
+        end try
+        if settingFinderHiddenFiles is "1" then
+           checkBoxFinderHiddenFiles's setState_(1)
+        else
+            set settingFinderHiddenFiles to "0"
+            checkBoxFinderHiddenFiles's setState_(0)
+        end if
+        -- Finder Library Ordner
+        try
+            set settingFinderLibraryOrdner to (do shell script "ls -lO ~ |grep Library|grep hidden")
+        end try
+        if settingFinderLibraryOrdner contains "hidden" then
+            checkBoxFinderLibraryOrdner's setState_(0)
+        else
+            checkBoxFinderLibraryOrdner's setState_(1)
+        end if
+        -- Papierkorb Warnung
+        try
+            set settingPapierkorbWarnung to (do shell script "defaults read com.apple.finder WarnOnEmptyTrash")
+        end try
+        if settingPapierkorbWarnung is "1" then
+            checkBoxPapierkorbWarnung's setState_(1)
+        else
+            set settingPapierkorbWarnung to "0"
+            checkBoxPapierkorbWarnung's setState_(0)
+        end if
+        -- Entfernte CD/DVD
+        try
+            set settingEntfernteCDDVD to (do shell script "defaults read com.apple.finder EnableODiskBrowsing")
+        end try
+        if settingEntfernteCDDVD is "1" then
+            checkBoxEntfernteCDDVD's setState_(1)
+        else
+            set settingEntfernteCDDVD to "0"
+            checkBoxEntfernteCDDVD's setState_(0)
+        end if
+        -- Erweiterter Speichern unter Dialog
+        try
+            set settingSpeichernUnterDialog to (do shell script "defaults read -g NSNavPanelExpandedStateForSaveMode")
+        end try
+        if settingSpeichernUnterDialog is "1" then
+            checkBoxSpeichernUnterDialog's setState_(1)
+        else
+            set settingSpeichernUnterDialog to "0"
+            checkBoxSpeichernUnterDialog's setState_(0)
+        end if
+        -- AirDrop
+        try
+            set settingAirDrop to (do shell script "defaults read com.apple.NetworkBrowser BrowseAllInterfaces")
+        end try
+        if settingAirDrop is "1" then
+            checkBoxAirDrop's setState_(1)
+        else
+            set settingAirDrop to "0"
+            checkBoxAirDrop's setState_(0)
+        end if
+        -- Bildschirmfotos ohne Schatten
+        try
+            set settingBildschirmfotoSchatten to (do shell script "defaults read com.apple.screencapture disable-shadow")
+        end try
+        if settingBildschirmfotoSchatten is "1" then
+            checkBoxBildschirmfotoSchatten's setState_(1)
+        else
+            set settingBildschirmfotoSchatten to "0"
+            checkBoxBildschirmfotoSchatten's setState_(0)
+        end if
+        -- Dock Apps durchsichtig
+        try
+            set settingDockDurchsichtig to (do shell script "defaults read com.apple.Dock showhidden")
+        end try
+        if settingDockDurchsichtig is "1" then
+            checkBoxDockDurchsichtig's setState_(1)
+        else
+            set settingDockDurchsichtig to "0"
+            checkBoxDockDurchsichtig's setState_(0)
+        end
+        -- Dock 2D Modus
+        try
+            set settingDock2D to (do shell script "defaults read com.apple.dock no-glass")
+        end try
+        if settingDock2D is "1" then
+            checkBoxDock2D's setState_(1)
+        else
+            set settingDock2D to "0"
+            checkBoxDock2D's setState_(0)
+        end if
+        -- TimeMachine auf Netzlaufwerke
+        try
+            set settingTimeMachineNetzlaufwerke to (do shell script "defaults read com.apple.systempreferences TMShowUnsupportedNetworkVolumes")
+        end try
+        if settingTimeMachineNetzlaufwerke is "1" then
+            checkBoxTimeMachineNetzlaufwerke's setState_(1)
+        else
+            set settingTimeMachineNetzlaufwerke to "0"
+            checkBoxTimeMachineNetzlaufwerke's setState_(0)
+        end if
+        -- Mac OS X Einrichtungsassistent
+        try
+            set settingInitialSetup to (do shell script "if [ -f /var/db/.AppleSetupDone ]; then echo '0'; else echo '1'; fi")
+        end try
+        if settingInitialSetup is "1" then
+            checkBoxInitialSetup's setState_(1)
+        else
+            checkBoxInitialSetup's setState_(0)
+        end if
+        -- PHP5 eingebauter Webserver
+        try
+            set settingPHP5eingebauterWebserver to (do shell script "cat /etc/apache2/httpd.conf |grep libphp5.so|colrm 2")
+        end try
+        if settingPHP5eingebauterWebserver is "L" then
+            checkBoxPHP5eingebauterWebserver's setState_(1)
+        else if settingPHP5eingebauterWebserver is "#" then
+            checkBoxPHP5eingebauterWebserver's setState_(0)
+        end if
+        -- FTP Dienst wieder aktivieren
+        try
+            set settingFTPwiederAktivieren to (do shell script "cat /System/Library/LaunchDaemons/ftp.plist|grep Enabled")
+        end try
+        if settingFTPwiederAktivieren contains "Enabled" then
+            set settingFTPwiederAktivieren to "1"
+            checkBoxFTPwiederAktivieren's setState_(1)
+        else
+            set settingFTPwiederAktivieren to "0"
+            checkBoxFTPwiederAktivieren's setState_(0)
+        end if
+        
+        -- ######################################
         
         -- Projektversion für die GUI
         set projectVersion to current application's NSBundle's mainBundle()'s objectForInfoDictionaryKey_("CFBundleShortVersionString")
         macMaintenanceVersion's setStringValue_(projectVersion)
         
-        set productVersion to do shell script "sw_vers -productVersion"
         -- Deaktiviere Funktionen die unter Snow Leopard nicht verfügbar sind
+        set productVersion to (do shell script "sw_vers -productVersion")
         if productVersion contains "10.6"
             buttonPurgeMemory's setEnabled_(false)
-            buttonAirDropEnable's setEnabled_(false)
-            buttonAirDropDisable's setEnabled_(false)
+            checkBoxAirDrop's setEnabled_(false)
+            checkBoxFTPwiederAktivieren's setEnabled_(false)
         end if
     
         -- Wie viel Speicherplatz belegen die Caches?
@@ -45,12 +211,12 @@ script AppDelegate
         SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
     
         -- Finder Toolbar Objekt hervorheben
-        try
-            toolbar's setSelectedItemIdentifier_("toolbarFinder")
-        end try
+        toolbar's setSelectedItemIdentifier_("toolbarFinder")
 	end applicationWillFinishLaunching_
 
     -- MacMaintenance BEGIN
+
+    -- ######################## TABS & TOOLBAR ########################
 
     -- Tabs per Toolbar ansteuern
     on selectTabFinder_(sender)
@@ -80,123 +246,127 @@ script AppDelegate
     -- ######################## FINDER ########################
     
     -- Versteckte Dateien im Finder anzeigen
-    on FinderVersteckteDateienJA_(sender)
+    on FinderVersteckteDateien_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder AppleShowAllFiles -boolean TRUE && killall Finder"
+        if settingFinderHiddenFiles is "1" then
+            do shell script "defaults write com.apple.finder AppleShowAllFiles -boolean FALSE && killall Finder"
+            set settingFinderHiddenFiles to "0"
+        else
+            do shell script "defaults write com.apple.finder AppleShowAllFiles -boolean TRUE && killall Finder"
+            set settingFinderHiddenFiles to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end FinderVersteckteDateienJA_
-    
-    on FinderVersteckteDateienNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder AppleShowAllFiles -boolean FALSE && killall Finder"
-        spinner's stopAnimation_(sender)
-    end FinderVersteckteDateienNEIN_
+    end FinderVersteckteDateien_
     
     -- Library Ordner im Finder anzeigen
-    on FinderLibraryOrdnerJA_(sender)
+    on FinderLibraryOrdner_(sender)
         spinner's startAnimation_(sender)
-        do shell script "chflags nohidden ~/Library"
+        if settingFinderLibraryOrdner contains "hidden" then
+            do shell script "chflags nohidden ~/Library"
+            set settingFinderLibraryOrdner to ""
+        else
+            do shell script "chflags hidden ~/Library"
+            set settingFinderLibraryOrdner to "hidden"
+        end if
         spinner's stopAnimation_(sender)
-    end FinderLibraryOrdnerJA_
-    
-    on FinderLibraryOrdnerNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "chflags hidden ~/Library"
-        spinner's stopAnimation_(sender)
-    end FinderLibraryOrdnerNEIN_
+    end FinderLibraryOrdner_
     
     -- Nachfrage beim Leeren des Papierkorbes anzeigen
-    on NachfragePapierkorbLeerenJA_(sender)
+    on NachfragePapierkorbLeeren_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder WarnOnEmptyTrash -boolean TRUE && killall Finder"
+        if settingPapierkorbWarnung is "1" then
+            do shell script "defaults write com.apple.finder WarnOnEmptyTrash -boolean FALSE && killall Finder"
+            set settingPapierkorbWarnung to "0"
+        else
+            do shell script "defaults write com.apple.finder WarnOnEmptyTrash -boolean TRUE && killall Finder"
+            set settingPapierkorbWarnung to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end NachfragePapierkorbLeerenJA_
-    
-    on NachfragePapierkorbLeerenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder WarnOnEmptyTrash -boolean FALSE && killall Finder"
-        spinner's stopAnimation_(sender)
-    end NachfragePapierkorbLeerenNEIN_
+    end NachfragePapierkorbLeeren_
     
     -- Entfernte CD/DVD aktivieren
-    on EntfernteCDDVDaktivierenJA_(sender)
+    on EntfernteCDDVDaktivieren_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean TRUE && defaults write com.apple.NetworkBrowser ODSSupported -bool TRUE && killall Finder"
+        if settingEntfernteCDDVD is "1" then
+            do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean FALSE && defaults write com.apple.NetworkBrowser ODSSupported -boolean FALSE && killall Finder"
+            set settingEntfernteCDDVD to "0"
+        else
+            do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean TRUE && defaults write com.apple.NetworkBrowser ODSSupported -boolean TRUE && killall Finder"
+            set settingEntfernteCDDVD to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end EntfernteCDDVDaktivierenJA_
-    
-    on EntfernteCDDVDaktivierenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean FALSE && defaults write com.apple.NetworkBrowser ODSSupported -bool FALSE && killall Finder"
-        spinner's stopAnimation_(sender)
-    end EntfernteCDDVDaktivierenNEIN_
+    end EntfernteCDDVDaktivieren_
     
     -- Erweiterter Speichern unter Dialog
-    on ErweiterterSpeichernUnterDialogJA_(sender)
+    on ErweiterterSpeichernUnterDialog_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE && killall Finder"
+        if settingSpeichernUnterDialog is "1" then
+            do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean FALSE && killall Finder"
+            set settingSpeichernUnterDialog to "0"
+        else
+            do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE && killall Finder"
+            set settingSpeichernUnterDialog to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end ErweiterterSpeichernUnterDialogJA_
-    
-    on ErweiterterSpeichernUnterDialogNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean FALSE && killall Finder"
-        spinner's stopAnimation_(sender)
-    end ErweiterterSpeichernUnterDialogNEIN_
+    end ErweiterterSpeichernUnterDialog_
     
     -- AirDrop auf nicht unterstützten Macs aktivieren
-    on AirDropAktivierenJA_(sender)
+    on AirDropAktivieren_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean TRUE && killall Finder"
+        if settingAirDrop is "1" then
+            do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean FALSE && killall Finder"
+            set settingAirDrop to "0"
+        else
+            do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean TRUE && killall Finder"
+            set settingAirDrop to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end AirDropAktivierenJA_
-    
-    on AirDropAktivierenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean FALSE && killall Finder"
-        spinner's stopAnimation_(sender)
-    end AirDropAktivierenNEIN_
+    end AirDropAktivieren_
 
     -- Bildschirmfotos ohne Schatten
-    on BildschirmfotosOhneSchattenJA_(sender)
+    on BildschirmfotosOhneSchatten_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.screencapture disable-shadow -boolean TRUE && killall SystemUIServer && sleep 5"
+        if settingBildschirmfotoSchatten is "1" then
+            try
+                do shell script "defaults write com.apple.screencapture disable-shadow -boolean FALSE && killall SystemUIServer && sleep 5"
+                set settingBildschirmfotoSchatten to "0"
+            end try
+        else
+            try
+                do shell script "defaults write com.apple.screencapture disable-shadow -boolean TRUE && killall SystemUIServer && sleep 5"
+                set settingBildschirmfotoSchatten to "1"
+            end try
+        end if
         spinner's stopAnimation_(sender)
-    end BildschirmfotosOhneSchattenJA_
-
-    on BildschirmfotosOhneSchattenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.screencapture disable-shadow -boolean FALSE && killall SystemUIServer && sleep 5"
-        spinner's stopAnimation_(sender)
-    end BildschirmfotosOhneSchattenNEIN_
+    end BildschirmfotosOhneSchatten_
 
     -- ######################## DOCK ########################
     
     -- Ausgeblendete Programme durchsichtig anzeigen
-    on AusgeblendeteProgrammeDurchsichtigJA_(sender)
+    on AusgeblendeteProgrammeDurchsichtig_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.Dock showhidden -boolean TRUE && killall Dock"
+        if settingDockDurchsichtig is "1" then
+            do shell script "defaults write com.apple.Dock showhidden -boolean FALSE && killall Dock"
+            set settingDockDurchsichtig to "0"
+        else
+            do shell script "defaults write com.apple.Dock showhidden -boolean TRUE && killall Dock"
+            set settingDockDurchsichtig to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end AusgeblendeteProgrammeDurchsichtigJA_
-    
-    on AusgeblendeteProgrammeDurchsichtigNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.Dock showhidden -boolean FALSE && killall Dock"
-        spinner's stopAnimation_(sender)
-    end AusgeblendeteProgrammeDurchsichtigNEIN_
+    end AusgeblendeteProgrammeDurchsichtig_
     
     -- Dock im 2D Modus ausführen
-    on Dockim2DModusJA_(sender)
+    on Dockim2DModus_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.dock no-glass -boolean TRUE && killall Dock"
+        if settingDock2D is "1"
+            do shell script "defaults write com.apple.dock no-glass -boolean FALSE && killall Dock"
+            set settingDock2D to "0"
+        else
+            do shell script "defaults write com.apple.dock no-glass -boolean TRUE && killall Dock"
+            set settingDock2D to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end Dockim2DModusJA_
-    
-    on Dockim2DModusNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.dock no-glass -boolean FALSE && killall Dock"
-        spinner's stopAnimation_(sender)
-    end Dockim2DModusNEIN_
+    end Dockim2DModus_
 
     -- ######################## CACHES ########################
     
@@ -281,17 +451,17 @@ script AppDelegate
     end CUPSconfigadmin_
     
     -- Time Machine Backups auf nicht unterstützte Laufwerke aktivieren
-    on TimeMachineNetzlaufwerkeJA_(sender)
+    on TimeMachineNetzlaufwerke_(sender)
         spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -boolean TRUE"
+        if settingTimeMachineNetzlaufwerke is "1" then
+            do shell script "defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -boolean FALSE"
+            set settingTimeMachineNetzlaufwerke to "0"
+        else
+            do shell script "defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -boolean TRUE"
+            set settingTimeMachineNetzlaufwerke to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end TimeMachineNetzlaufwerkeJA_
-    
-    on TimeMachineNetzlaufwerkeNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -boolean FALSE"
-        spinner's stopAnimation_(sender)
-    end TimeMachineNetzlaufwerkeNEIN_
+    end TimeMachineNetzlaufwerke_
     
     -- LaunchServiceDB zurücksetzen
     on LaunchServiceDBZuruecksetzen_(sender)
@@ -301,53 +471,53 @@ script AppDelegate
     end LaunchServiceDBZuruecksetzen_
     
     -- Mac OS X Einrichtungsdialog zurücksetzen
-    on AppleSetupDoneLoeschenJA_(sender)
+    on AppleSetupDoneLoeschen_(sender)
         spinner's startAnimation_(sender)
-        try
-            do shell script "rm /var/db/.AppleSetupDone" with administrator privileges
-        end try
+        if settingInitialSetup is "1" then
+            try
+                do shell script "touch /var/db/.AppleSetupDone" with administrator privileges
+                set settingInitialSetup to "0"
+            end try
+        else
+            try
+                do shell script "rm /var/db/.AppleSetupDone" with administrator privileges
+                set settingInitialSetup to "1"
+            end try
+        end if
         spinner's stopAnimation_(sender)
-    end AppleSetupDoneLoeschenJA_
-    
-    on AppleSetupDoneLoeschenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        try
-            do shell script "touch /var/db/.AppleSetupDone" with administrator privileges
-        end try
-        spinner's stopAnimation_(sender)
-    end AppleSetupDoneLoeschenNEIN_
+    end AppleSetupDoneLoeschen_
     
     -- PHP5 im eingebauten Webserver aktivieren
-    on PHP5imApacheAktivierenJA_(sender)
+    on PHP5imApacheAktivieren_(sender)
         spinner's startAnimation_(sender)
-        try
-            do shell script "mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.backup && cat /etc/apache2/httpd.conf.backup | sed -e 's/#LoadModule php5_module/LoadModule php5_module/' > /etc/apache2/httpd.conf" with administrator privileges
-        end try
+        if settingPHP5eingebauterWebserver is "#" then
+            try
+                do shell script "mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.tmp && cat /etc/apache2/httpd.conf.tmp | sed -e 's/#LoadModule php5_module/LoadModule php5_module/' > /etc/apache2/httpd.conf && rm /etc/apache2/httpd.conf.tmp" with administrator privileges
+                set settingPHP5eingebauterWebserver to "L"
+            end try
+        else if settingPHP5eingebauterWebserver is "L" then
+            try
+                do shell script "mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.tmp && cat /etc/apache2/httpd.conf.tmp | sed -e 's/LoadModule php5_module/#LoadModule php5_module/' > /etc/apache2/httpd.conf && rm /etc/apache2/httpd.conf.tmp" with administrator privileges
+                set settingPHP5eingebauterWebserver to "#"
+            end try
+        end if
         spinner's stopAnimation_(sender)
-    end PHP5imApacheAktivierenJA_
-    
-    on PHP5imApacheAktivierenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        try
-            do shell script "if [ -f /etc/apache2/httpd.conf.backup ]; then mv /etc/apache2/httpd.conf.backup /etc/apache2/httpd.conf; fi" with administrator privileges
-        end try
-        spinner's stopAnimation_(sender)
-    end PHP5imApacheAktivierenNEIN_
+    end PHP5imApacheAktivieren_
     
     -- FTP Dateifreigabe wieder aktivieren (ab Lion)
-    on FTPDateifreigabeAktivierenJA_(sender)
+    on FTPDateifreigabeAktivieren_(sender)
         spinner's startAnimation_(sender)
-        do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.backup && cat /System/Library/LaunchDaemons/ftp.plist.backup | sed -e 's/Disabled/Enabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
-        do shell script "launchctl load -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+        if settingFTPwiederAktivieren contains "1" then
+            do shell script "launchctl unload -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+            do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.tmp && cat /System/Library/LaunchDaemons/ftp.plist.tmp | sed -e 's/Enabled/Disabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+            set settingFTPwiederAktivieren to "0"
+        else
+            do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.tmp && cat /System/Library/LaunchDaemons/ftp.plist.tmp | sed -e 's/Disabled/Enabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+            do shell script "launchctl load -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+            set settingFTPwiederAktivieren to "1"
+        end if
         spinner's stopAnimation_(sender)
-    end FTPDateifreigabeAktivierenJA_
-    
-    on FTPDateifreigabeAktivierenNEIN_(sender)
-        spinner's startAnimation_(sender)
-        do shell script "launchctl unload -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
-        do shell script "if [ -f /System/Library/LaunchDaemons/ftp.plist.back ]; then mv /System/Library/LaunchDaemons/ftp.plist.backup /System/Library/LaunchDaemons/ftp.plist; fi" with administrator privileges
-        spinner's stopAnimation_(sender)
-    end FTPDateifreigabeAktivierenNEIN_
+    end FTPDateifreigabeAktivieren_
 
     -- ######################## WARTUNG ########################
 
