@@ -1,3 +1,8 @@
+Version 3.3.1
+- Kompatibilitätsupdate für Mac OS X 10.9 Mavericks
+- Größe der Caches wird nun aktualisiert, wenn der Tab neu geladen wird
+- Größe des Docks genau in Pixeln einstellen
+
 Version 3.3
 - Ausgewählte Toolbar-Objekte werden nun hervorgehoben
 - Deutlichere Auflistung der einzelnen Schritte unter "Wartung"

@@ -26,6 +26,7 @@ script AppDelegate
     
     property popUpButtonWartung : missing value
     property aktionNachWartung : missing value
+    property answerDockSize : 0
     
     property macMaintenanceVersion : missing value
         
@@ -39,6 +40,7 @@ script AppDelegate
     property settingBildschirmfotoSchatten : missing value
     property settingDockDurchsichtig : missing value
     property settingDock2D : missing value
+    property settingDockSizePixel : 0
     property settingTimeMachineNetzlaufwerke : missing value
     property settingInitialSetup : missing value
     property settingPHP5eingebauterWebserver : missing value
@@ -152,6 +154,10 @@ script AppDelegate
             set settingDock2D to "0"
             checkBoxDock2D's setState_(0)
         end if
+        -- Dock Größe in Pixeln
+        try
+            set settingDockSizePixel to (do shell script "defaults read com.apple.dock tilesize") as integer
+        end try
         -- TimeMachine auf Netzlaufwerke
         try
             set settingTimeMachineNetzlaufwerke to (do shell script "defaults read com.apple.systempreferences TMShowUnsupportedNetworkVolumes")
@@ -198,12 +204,15 @@ script AppDelegate
         set projectVersion to current application's NSBundle's mainBundle()'s objectForInfoDictionaryKey_("CFBundleShortVersionString")
         macMaintenanceVersion's setStringValue_(projectVersion)
         
-        -- Deaktiviere Funktionen die unter Snow Leopard nicht verfügbar sind
+        -- Deaktiviere Funktionen die unter Snow Leopard / Mavericks nicht verfügbar sind
         set productVersion to (do shell script "sw_vers -productVersion")
         if productVersion contains "10.6"
             buttonPurgeMemory's setEnabled_(false)
             checkBoxAirDrop's setEnabled_(false)
             checkBoxFTPwiederAktivieren's setEnabled_(false)
+        else if productVersion contains "10.9"
+            checkBoxDock2D's setEnabled_(false)
+            checkBoxDockDurchsichtig's setEnabled_(false)
         end if
     
         -- Wie viel Speicherplatz belegen die Caches?
@@ -229,6 +238,8 @@ script AppDelegate
 
     on selectTabCaches_(sender)
         tabView's selectTabViewItem_(tabCaches)
+        set SpeicherplatzCachesinMB to do shell script "du -scm /Library/Caches/ /System/Library/Caches/ ~/Library/Caches/ | grep total | cut -f 1"
+        SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
     end selectTabCaches_
 
     on selectTabSystem_(sender)
@@ -367,6 +378,24 @@ script AppDelegate
         end if
         spinner's stopAnimation_(sender)
     end Dockim2DModus_
+
+    -- Dock Größe in Pixeln angeben
+    on DockSizePixel_(sender)
+        spinner's startAnimation_(sender)
+        try
+            display dialog (localized string "DockSize") default answer settingDockSizePixel
+            try
+                set answerDockSize to (text returned of result) as integer
+            end try
+            if (answerDockSize is greater than "0") and (answerDockSize is less than "129") then
+                set settingDockSizePixel to answerDockSize
+                do shell script "defaults write com.apple.dock tilesize -int "&settingDockSizePixel
+                do shell script "killall Dock"
+                set answerDockSize to "0"
+            end if
+        end try
+        spinner's stopAnimation_(sender)
+    end DockSizePixel_
 
     -- ######################## CACHES ########################
     

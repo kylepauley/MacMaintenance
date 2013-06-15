@@ -8,3 +8,4 @@
 
 "DialogCloseApps" = "Alle geöffneten Programme werden nun geschlossen. Alle nicht gespeicherten Änderungen gehen dabei verloren.";
 "RestartToWork" = "Sie müssen Ihr System neu starten, um die Änderungen sichtbar zu machen.";
+"DockSize" = "Wie groß soll das Dock sein? (1-128)";
