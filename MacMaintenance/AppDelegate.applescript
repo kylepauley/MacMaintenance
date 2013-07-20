@@ -8,14 +8,11 @@
 
 script AppDelegate
 	property parent : class "NSObject"
+    -- Variablen setzen
     property spinner : missing value
-    
     property buttonPurgeMemory : missing value
-    
     property SpeicherplatzCaches : missing value
-    
     property toolbar : missing value
-
     property tabView : missing value
     property tabFinder : missing value
     property tabDock : missing value
@@ -23,11 +20,9 @@ script AppDelegate
     property tabSystem : missing value
     property tabWartung : missing value
     property tabHinweise : missing value
-    
     property popUpButtonWartung : missing value
     property aktionNachWartung : missing value
     property answerDockSize : 0
-    
     property macMaintenanceVersion : missing value
         
     -- Einstellungen
@@ -45,6 +40,7 @@ script AppDelegate
     property settingInitialSetup : missing value
     property settingPHP5eingebauterWebserver : missing value
     property settingFTPwiederAktivieren : missing value
+    property settingApache2WebserverStarten : missing value
     
     -- Checkboxen
     property checkBoxFinderHiddenFiles : missing value
@@ -60,6 +56,7 @@ script AppDelegate
     property checkBoxInitialSetup : missing value
     property checkBoxPHP5eingebauterWebserver : missing value
     property checkBoxFTPwiederAktivieren : missing value
+    property checkBoxApache2WebserverStarten : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
@@ -177,6 +174,16 @@ script AppDelegate
         else
             checkBoxInitialSetup's setState_(0)
         end if
+        -- Apache2 Webserver starten
+        try
+            set settingApache2WebserverStarten to (do shell script "TESTVAR=`pgrep httpd|wc -l` && echo $TESTVAR")
+        end try
+        if (settingApache2WebserverStarten is greater than "0") then
+            checkBoxApache2WebserverStarten's setState_(1)
+            else
+            checkBoxApache2WebserverStarten's setState_(0)
+        end if
+        
         -- PHP5 eingebauter Webserver
         try
             set settingPHP5eingebauterWebserver to (do shell script "cat /etc/apache2/httpd.conf |grep libphp5.so|colrm 2")
@@ -210,6 +217,7 @@ script AppDelegate
             buttonPurgeMemory's setEnabled_(false)
             checkBoxAirDrop's setEnabled_(false)
             checkBoxFTPwiederAktivieren's setEnabled_(false)
+            checkBoxApache2WebserverStarten's setEnabled_(false)
         else if productVersion contains "10.9"
             checkBoxDock2D's setEnabled_(false)
             checkBoxDockDurchsichtig's setEnabled_(false)
@@ -506,16 +514,41 @@ script AppDelegate
             try
                 do shell script "touch /var/db/.AppleSetupDone" with administrator privileges
                 set settingInitialSetup to "0"
+            on error
+                checkBoxInitialSetup's setState_(1)
             end try
         else
             try
                 do shell script "rm /var/db/.AppleSetupDone" with administrator privileges
                 set settingInitialSetup to "1"
+            on error
+                checkBoxInitialSetup's setState_(0)
             end try
         end if
         spinner's stopAnimation_(sender)
     end AppleSetupDoneLoeschen_
-    
+
+    -- Apache2 Webserver starten
+    on Apache2WebserverStarten_(sender)
+        spinner's startAnimation_(sender)
+        if settingApache2WebserverStarten is "0" then
+            try
+                do shell script "apachectl start" with administrator privileges
+                set settingApache2WebserverStarten to "1"
+            on error
+                checkBoxApache2WebserverStarten's setState_(0)
+            end try
+        else
+            try
+                do shell script "apachectl stop" with administrator privileges
+                set settingApache2WebserverStarten to "0"
+            on error
+                checkBoxApache2WebserverStarten's setState_(1)
+            end try
+        end if
+        spinner's stopAnimation_(sender)
+    end Apache2WebserverStarten_
+
     -- PHP5 im eingebauten Webserver aktivieren
     on PHP5imApacheAktivieren_(sender)
         spinner's startAnimation_(sender)
@@ -523,11 +556,21 @@ script AppDelegate
             try
                 do shell script "mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.tmp && cat /etc/apache2/httpd.conf.tmp | sed -e 's/#LoadModule php5_module/LoadModule php5_module/' > /etc/apache2/httpd.conf && rm /etc/apache2/httpd.conf.tmp" with administrator privileges
                 set settingPHP5eingebauterWebserver to "L"
+                if settingApache2WebserverStarten is "1" then
+                    do shell script "apachectl restart" with administrator privileges
+                end if
+            on error
+                checkBoxPHP5eingebauterWebserver's setState_(0)
             end try
         else if settingPHP5eingebauterWebserver is "L" then
             try
                 do shell script "mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.tmp && cat /etc/apache2/httpd.conf.tmp | sed -e 's/LoadModule php5_module/#LoadModule php5_module/' > /etc/apache2/httpd.conf && rm /etc/apache2/httpd.conf.tmp" with administrator privileges
                 set settingPHP5eingebauterWebserver to "#"
+                if settingApache2WebserverStarten is "1" then
+                    do shell script "apachectl restart" with administrator privileges
+                end if
+            on error
+                checkBoxPHP5eingebauterWebserver's setState_(1)
             end try
         end if
         spinner's stopAnimation_(sender)
@@ -537,13 +580,21 @@ script AppDelegate
     on FTPDateifreigabeAktivieren_(sender)
         spinner's startAnimation_(sender)
         if settingFTPwiederAktivieren contains "1" then
-            do shell script "launchctl unload -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
-            do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.tmp && cat /System/Library/LaunchDaemons/ftp.plist.tmp | sed -e 's/Enabled/Disabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
-            set settingFTPwiederAktivieren to "0"
+            try
+                do shell script "launchctl unload -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+                do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.tmp && cat /System/Library/LaunchDaemons/ftp.plist.tmp | sed -e 's/Enabled/Disabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+                set settingFTPwiederAktivieren to "0"
+            on error
+                checkBoxFTPwiederAktivieren's setState_(1)
+            end try
         else
-            do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.tmp && cat /System/Library/LaunchDaemons/ftp.plist.tmp | sed -e 's/Disabled/Enabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
-            do shell script "launchctl load -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
-            set settingFTPwiederAktivieren to "1"
+            try
+                do shell script "mv /System/Library/LaunchDaemons/ftp.plist /System/Library/LaunchDaemons/ftp.plist.tmp && cat /System/Library/LaunchDaemons/ftp.plist.tmp | sed -e 's/Disabled/Enabled/' > /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+                do shell script "launchctl load -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
+                set settingFTPwiederAktivieren to "1"
+            on error
+                checkBoxFTPwiederAktivieren's setState_(0)
+            end try
         end if
         spinner's stopAnimation_(sender)
     end FTPDateifreigabeAktivieren_

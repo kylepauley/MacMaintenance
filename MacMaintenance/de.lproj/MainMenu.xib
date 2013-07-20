@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
+		<string key="IBDocument.SystemVersion">12E55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<string key="IBDocument.AppKitVersion">1187.39</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">3084</string>
@@ -393,7 +393,7 @@
 							<string key="NSFrame">{{13, 54}, {674, 460}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="482512475"/>
+							<reference key="NSNextKeyView" ref="470079757"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="218160543">
@@ -440,6 +440,7 @@
 														</object>
 													</object>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="980038248">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -463,6 +464,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="400822439">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -482,6 +484,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="629110360">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -501,6 +504,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="135924061">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -520,6 +524,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="645498180">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -539,6 +544,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="25934833">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -558,6 +564,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="223951755">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -577,6 +584,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="535388824">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -596,6 +604,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="99865173">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -615,6 +624,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="306480662">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -638,6 +648,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="631941836">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -656,6 +667,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="436179022">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -675,6 +687,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="740524680">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -694,6 +707,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="1029654857">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -713,6 +727,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="889660204">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -732,6 +747,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="399527313">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -762,6 +778,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="480889266">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -787,6 +804,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="53378855">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -812,6 +830,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="1023118142">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -837,6 +856,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="113436587">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -862,6 +882,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="40470550">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -887,6 +908,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="578585614">
 												<reference key="NSNextResponder" ref="405634264"/>
@@ -912,6 +934,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {654, 440}}</string>
@@ -925,7 +948,7 @@
 								<object class="NSTabViewItem" id="666745203">
 									<string key="NSIdentifier">2</string>
 									<object class="NSView" key="NSView" id="482512475">
-										<reference key="NSNextResponder" ref="842867672"/>
+										<nil key="NSNextResponder"/>
 										<int key="NSvFlags">274</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSTextField" id="424875090">
@@ -933,7 +956,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 408}, {345, 17}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="628122466"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -947,13 +969,13 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="628122466">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 383}, {480, 17}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="314027334"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -967,13 +989,13 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="286833384">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 358}, {334, 17}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="559166100"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -987,13 +1009,13 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="559166100">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 333}, {440, 17}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="8760449"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1007,13 +1029,13 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="314027334">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{620, 382}, {22, 18}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="286833384"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1033,13 +1055,13 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="8760449">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{620, 332}, {22, 18}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="711201582"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1059,13 +1081,13 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="711201582">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 308}, {235, 17}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="530522712"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1079,13 +1101,13 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="530522712">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 283}, {409, 17}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="49200295"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1099,14 +1121,13 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="49200295">
 												<reference key="NSNextResponder" ref="482512475"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{576, 273}, {70, 32}}</string>
 												<reference key="NSSuperview" ref="482512475"/>
-												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView" ref="471115160"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="406203044">
@@ -1123,11 +1144,10 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {654, 440}}</string>
-										<reference key="NSSuperview" ref="842867672"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="424875090"/>
 									</object>
 									<string key="NSLabel">Dock</string>
@@ -1158,6 +1178,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="946864655">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1177,6 +1198,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="807274252">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1200,6 +1222,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="209603936">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1219,6 +1242,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="558807583">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1238,6 +1262,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="513722674">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1261,6 +1286,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="661306910">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1280,6 +1306,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="136763717">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1299,6 +1326,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="775188236">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1318,6 +1346,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="1006527497">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1337,6 +1366,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="861283585">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1360,6 +1390,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="719277040">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1383,6 +1414,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="777647699">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1402,6 +1434,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="937753683">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1420,6 +1453,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="866734859">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1438,6 +1472,7 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="74008107">
 												<reference key="NSNextResponder" ref="473797595"/>
@@ -1460,6 +1495,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {654, 440}}</string>
@@ -1472,7 +1508,7 @@
 								<object class="NSTabViewItem" id="632778152">
 									<string key="NSIdentifier">4</string>
 									<object class="NSView" key="NSView" id="470079757">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="842867672"/>
 										<int key="NSvFlags">274</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSTextField" id="961153847">
@@ -1480,6 +1516,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 408}, {206, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="520250453"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1493,12 +1530,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="520250453">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 383}, {484, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="492727464"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1512,12 +1551,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="671008080">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{576, 373}, {70, 32}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="997119956"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1535,12 +1576,14 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="165815848">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{576, 323}, {70, 32}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="782943166"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1558,12 +1601,14 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="492727464">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 358}, {173, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="671008080"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1577,12 +1622,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="997119956">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 333}, {305, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="554964800"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1596,12 +1643,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="554964800">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 308}, {186, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="165815848"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1615,12 +1664,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="782943166">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 283}, {359, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="983323634"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1634,12 +1685,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="1070290535">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{576, 273}, {70, 32}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="954250489"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1657,12 +1710,14 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="598573310">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{495, 273}, {81, 32}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1070290535"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1680,12 +1735,14 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="479744788">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 194}, {291, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1014427008"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1699,12 +1756,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="1014427008">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 169}, {501, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="134011009"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1718,12 +1777,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="983323634">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 268}, {369, 14}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="598573310"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1737,12 +1798,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="433600185">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{11, 144}, {339, 17}}</string>
+												<string key="NSFrame">{{11, 94}, {339, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="344018691"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1756,12 +1819,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="344018691">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{11, 119}, {474, 17}}</string>
+												<string key="NSFrame">{{11, 69}, {474, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="781696235"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1775,12 +1840,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="90848878">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{11, 94}, {206, 17}}</string>
+												<string key="NSFrame">{{11, 44}, {206, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="881680304"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1794,12 +1861,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="881680304">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{11, 69}, {484, 17}}</string>
+												<string key="NSFrame">{{11, 19}, {484, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="491762975"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1813,13 +1882,15 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="134011009">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{620, 168}, {22, 18}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
-												<reference key="NSNextKeyView" ref="433600185"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="1005437416"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="800878253">
@@ -1838,12 +1909,14 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="781696235">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{620, 118}, {22, 18}}</string>
+												<string key="NSFrame">{{620, 68}, {22, 18}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="90848878"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1863,13 +1936,41 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+											</object>
+											<object class="NSButton" id="556293012">
+												<reference key="NSNextResponder" ref="470079757"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{620, 117}, {22, 18}}</string>
+												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
+												<string key="NSReuseIdentifierKey">_NS:9</string>
+												<bool key="NSEnabled">YES</bool>
+												<object class="NSButtonCell" key="NSCell" id="987240884">
+													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags2">268435456</int>
+													<string key="NSContents"/>
+													<reference key="NSSupport" ref="1056031790"/>
+													<string key="NSCellIdentifier">_NS:9</string>
+													<reference key="NSControlView" ref="556293012"/>
+													<int key="NSButtonFlags">1210863872</int>
+													<int key="NSButtonFlags2">2</int>
+													<reference key="NSNormalImage" ref="394438002"/>
+													<reference key="NSAlternateImage" ref="752725073"/>
+													<string key="NSAlternateContents"/>
+													<string key="NSKeyEquivalent"/>
+													<int key="NSPeriodicDelay">200</int>
+													<int key="NSPeriodicInterval">25</int>
+												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="491762975">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{620, 68}, {22, 18}}</string>
+												<string key="NSFrame">{{620, 18}, {22, 18}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
-												<reference key="NSNextKeyView" ref="842867672"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="471115160"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="126109127">
@@ -1888,12 +1989,14 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="954250489">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 243}, {225, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="251951100"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1907,12 +2010,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="251951100">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{11, 218}, {460, 17}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="1047279400"/>
 												<string key="NSReuseIdentifierKey">_NS:1535</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1926,12 +2031,14 @@
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="1047279400">
 												<reference key="NSNextResponder" ref="470079757"/>
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{620, 217}, {22, 18}}</string>
 												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="479744788"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
@@ -1951,9 +2058,54 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+											</object>
+											<object class="NSTextField" id="1005437416">
+												<reference key="NSNextResponder" ref="470079757"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{11, 144}, {188, 17}}</string>
+												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="15808598"/>
+												<string key="NSReuseIdentifierKey">_NS:1535</string>
+												<bool key="NSEnabled">YES</bool>
+												<object class="NSTextFieldCell" key="NSCell" id="610918549">
+													<int key="NSCellFlags">68157504</int>
+													<int key="NSCellFlags2">272630784</int>
+													<string key="NSContents">Apache2 Webserver starten</string>
+													<reference key="NSSupport" ref="223853976"/>
+													<string key="NSCellIdentifier">_NS:1535</string>
+													<reference key="NSControlView" ref="1005437416"/>
+													<reference key="NSBackgroundColor" ref="46216825"/>
+													<reference key="NSTextColor" ref="306453656"/>
+												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+											</object>
+											<object class="NSTextField" id="15808598">
+												<reference key="NSNextResponder" ref="470079757"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{11, 119}, {366, 17}}</string>
+												<reference key="NSSuperview" ref="470079757"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="433600185"/>
+												<string key="NSReuseIdentifierKey">_NS:1535</string>
+												<bool key="NSEnabled">YES</bool>
+												<object class="NSTextFieldCell" key="NSCell" id="895536013">
+													<int key="NSCellFlags">68157504</int>
+													<int key="NSCellFlags2">272630784</int>
+													<string key="NSContents">Soll der integrierte Apache2 Webserver gestartet werden?</string>
+													<reference key="NSSupport" ref="1056031790"/>
+													<string key="NSCellIdentifier">_NS:1535</string>
+													<reference key="NSControlView" ref="15808598"/>
+													<reference key="NSBackgroundColor" ref="46216825"/>
+													<reference key="NSTextColor" ref="306453656"/>
+												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {654, 440}}</string>
+										<reference key="NSSuperview" ref="842867672"/>
+										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="961153847"/>
 										<string key="NSReuseIdentifierKey">_NS:28</string>
 									</object>
@@ -1971,10 +2123,11 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{476, 7}, {167, 26}}</string>
 												<reference key="NSSuperview" ref="526831765"/>
+												<reference key="NSNextKeyView" ref="842867672"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSPopUpButtonCell" key="NSCell" id="716102952">
-													<int key="NSCellFlags">-2080244160</int>
+													<int key="NSCellFlags">-2080374720</int>
 													<int key="NSCellFlags2">2048</int>
 													<reference key="NSSupport" ref="1056031790"/>
 													<string key="NSCellIdentifier">_NS:9</string>
@@ -2048,6 +2201,7 @@
 													<bool key="NSAltersState">YES</bool>
 													<int key="NSArrowPosition">2</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSButton" id="368296985">
 												<reference key="NSNextResponder" ref="526831765"/>
@@ -2071,6 +2225,7 @@
 													<int key="NSPeriodicDelay">200</int>
 													<int key="NSPeriodicInterval">25</int>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="359441047">
 												<reference key="NSNextResponder" ref="526831765"/>
@@ -2110,6 +2265,7 @@ ZGVuIE1hYyBuaWNodCBhdXMuA</bytes>
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 											<object class="NSTextField" id="527334198">
 												<reference key="NSNextResponder" ref="526831765"/>
@@ -2129,6 +2285,7 @@ ZGVuIE1hYyBuaWNodCBhdXMuA</bytes>
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {654, 440}}</string>
@@ -2180,6 +2337,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 													<reference key="NSBackgroundColor" ref="46216825"/>
 													<reference key="NSTextColor" ref="306453656"/>
 												</object>
+												<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											</object>
 										</array>
 										<string key="NSFrame">{{10, 7}, {654, 440}}</string>
@@ -2190,13 +2348,13 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 									<reference key="NSTabView" ref="842867672"/>
 								</object>
 							</array>
-							<reference key="NSSelectedTabViewItem" ref="666745203"/>
+							<reference key="NSSelectedTabViewItem" ref="632778152"/>
 							<reference key="NSFont" ref="1056031790"/>
 							<int key="NSTvFlags">4</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
 							<bool key="NSDrawsBackground">YES</bool>
 							<array class="NSMutableArray" key="NSSubviews">
-								<reference ref="482512475"/>
+								<reference ref="470079757"/>
 							</array>
 						</object>
 						<object class="NSButton" id="330692864">
@@ -2205,7 +2363,6 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 							<string key="NSFrame">{{595, 10}, {94, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="34161685">
@@ -2222,6 +2379,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 								<int key="NSPeriodicDelay">200</int>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
 						<object class="NSTextField" id="845507873">
 							<reference key="NSNextResponder" ref="439893737"/>
@@ -2242,6 +2400,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 								<reference key="NSBackgroundColor" ref="46216825"/>
 								<reference key="NSTextColor" ref="306453656"/>
 							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
 						<object class="NSProgressIndicator" id="191791604">
 							<reference key="NSNextResponder" ref="439893737"/>
@@ -2273,6 +2432,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 								<reference key="NSBackgroundColor" ref="46216825"/>
 								<reference key="NSTextColor" ref="306453656"/>
 							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
 					</array>
 					<string key="NSFrameSize">{700, 520}</string>
@@ -2280,7 +2440,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="842867672"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1600, 900}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1360, 768}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">NO</bool>
 			</object>
@@ -2797,6 +2957,22 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 					</object>
 					<int key="connectionID">2336</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">checkBoxApache2WebserverStarten</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="556293012"/>
+					</object>
+					<int key="connectionID">2346</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">Apache2WebserverStarten:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="556293012"/>
+					</object>
+					<int key="connectionID">2347</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -2975,16 +3151,19 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 							<reference ref="598573310"/>
 							<reference ref="479744788"/>
 							<reference ref="1014427008"/>
+							<reference ref="134011009"/>
+							<reference ref="954250489"/>
+							<reference ref="251951100"/>
+							<reference ref="1047279400"/>
+							<reference ref="1005437416"/>
+							<reference ref="15808598"/>
 							<reference ref="433600185"/>
 							<reference ref="344018691"/>
 							<reference ref="90848878"/>
 							<reference ref="881680304"/>
-							<reference ref="134011009"/>
 							<reference ref="781696235"/>
 							<reference ref="491762975"/>
-							<reference ref="954250489"/>
-							<reference ref="251951100"/>
-							<reference ref="1047279400"/>
+							<reference ref="556293012"/>
 						</array>
 						<reference key="parent" ref="632778152"/>
 					</object>
@@ -4231,6 +4410,45 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 						<reference key="object" ref="406203044"/>
 						<reference key="parent" ref="49200295"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2337</int>
+						<reference key="object" ref="1005437416"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="610918549"/>
+						</array>
+						<reference key="parent" ref="470079757"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2338</int>
+						<reference key="object" ref="610918549"/>
+						<reference key="parent" ref="1005437416"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2339</int>
+						<reference key="object" ref="15808598"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="895536013"/>
+						</array>
+						<reference key="parent" ref="470079757"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2340</int>
+						<reference key="object" ref="895536013"/>
+						<reference key="parent" ref="15808598"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2343</int>
+						<reference key="object" ref="556293012"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="987240884"/>
+						</array>
+						<reference key="parent" ref="470079757"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">2344</int>
+						<reference key="object" ref="987240884"/>
+						<reference key="parent" ref="556293012"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -4368,6 +4586,12 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 				<string key="2333.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2334.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2335.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2337.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2338.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2339.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2340.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2343.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2344.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="236.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="371.IBNSWindowAutoPositionCentersHorizontal"/>
@@ -4462,7 +4686,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">2336</int>
+			<int key="maxID">2347</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4471,6 +4695,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="AirDropAktivieren:">id</string>
+						<string key="Apache2WebserverStarten:">id</string>
 						<string key="AppleSetupDoneLoeschen:">id</string>
 						<string key="AusgeblendeteProgrammeDurchsichtig:">id</string>
 						<string key="BildschirmfotosOhneSchatten:">id</string>
@@ -4506,6 +4731,10 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="AirDropAktivieren:">
 							<string key="name">AirDropAktivieren:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="Apache2WebserverStarten:">
+							<string key="name">Apache2WebserverStarten:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="AppleSetupDoneLoeschen:">
@@ -4638,6 +4867,7 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 						<string key="aktionNachWartung">id</string>
 						<string key="buttonPurgeMemory">id</string>
 						<string key="checkBoxAirDrop">id</string>
+						<string key="checkBoxApache2WebserverStarten">id</string>
 						<string key="checkBoxBildschirmfotoSchatten">id</string>
 						<string key="checkBoxDock2D">id</string>
 						<string key="checkBoxDockDurchsichtig">id</string>
@@ -4653,10 +4883,10 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 						<string key="macMaintenanceVersion">id</string>
 						<string key="popUpButtonWartung">id</string>
 						<string key="settingAirDrop">id</string>
+						<string key="settingApache2WebserverStarten">id</string>
 						<string key="settingBildschirmfotoSchatten">id</string>
 						<string key="settingDock2D">id</string>
 						<string key="settingDockDurchsichtig">id</string>
-						<string key="settingDockSizePixel">id</string>
 						<string key="settingEntfernteCDDVD">id</string>
 						<string key="settingFTPwiederAktivieren">id</string>
 						<string key="settingFinderHiddenFiles">id</string>
@@ -4691,6 +4921,10 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 						</object>
 						<object class="IBToOneOutletInfo" key="checkBoxAirDrop">
 							<string key="name">checkBoxAirDrop</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="checkBoxApache2WebserverStarten">
+							<string key="name">checkBoxApache2WebserverStarten</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="checkBoxBildschirmfotoSchatten">
@@ -4753,6 +4987,10 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 							<string key="name">settingAirDrop</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="settingApache2WebserverStarten">
+							<string key="name">settingApache2WebserverStarten</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="settingBildschirmfotoSchatten">
 							<string key="name">settingBildschirmfotoSchatten</string>
 							<string key="candidateClassName">id</string>
@@ -4763,10 +5001,6 @@ YW5kZW5lbiBGdW5rdGlvbmVuIHd1cmRlbiB2b24gbWlyIGF1ZiBGdW5rdGlvbiBnZXRlc3RldC4</byt
 						</object>
 						<object class="IBToOneOutletInfo" key="settingDockDurchsichtig">
 							<string key="name">settingDockDurchsichtig</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="settingDockSizePixel">
-							<string key="name">settingDockSizePixel</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="settingEntfernteCDDVD">
