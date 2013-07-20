@@ -1,3 +1,6 @@
+Version 3.3.3
+- Fehler behoben bei "Eingebauten Apache2 Webserver starten/stoppen"
+
 Version 3.3.2
 - Eingebauten Apache2 Webserver starten/stoppen
 - PHP5 Modul im Apache2 Server startet den Server nach Änderung neu

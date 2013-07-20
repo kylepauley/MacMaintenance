@@ -176,7 +176,7 @@ script AppDelegate
         end if
         -- Apache2 Webserver starten
         try
-            set settingApache2WebserverStarten to (do shell script "TESTVAR=`pgrep httpd|wc -l` && echo $TESTVAR")
+            set settingApache2WebserverStarten to (do shell script "TESTVAR=`ps aux|grep /usr/sbin/httpd|wc -l` && echo $TESTVAR")
         end try
         if (settingApache2WebserverStarten is greater than "0") then
             checkBoxApache2WebserverStarten's setState_(1)
@@ -217,6 +217,8 @@ script AppDelegate
             buttonPurgeMemory's setEnabled_(false)
             checkBoxAirDrop's setEnabled_(false)
             checkBoxFTPwiederAktivieren's setEnabled_(false)
+            checkBoxApache2WebserverStarten's setEnabled_(false)
+        else if productVersion contains "10.7"
             checkBoxApache2WebserverStarten's setEnabled_(false)
         else if productVersion contains "10.9"
             checkBoxDock2D's setEnabled_(false)
