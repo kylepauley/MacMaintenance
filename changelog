@@ -1,3 +1,6 @@
+Version 3.3.4
+- Fehler bei der Anzeige des aktuellen Status von Apache2 behoben
+
 Version 3.3.3
 - Fehler behoben bei "Eingebauten Apache2 Webserver starten/stoppen"
 

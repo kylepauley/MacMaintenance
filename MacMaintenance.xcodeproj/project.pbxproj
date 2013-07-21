@@ -147,6 +147,15 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Mr Maintenance";
+				TargetAttributes = {
+					17D280251743F05E002155A1 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 17D280211743F05E002155A1 /* Build configuration list for PBXProject "MacMaintenance" */;
 			compatibilityVersion = "Xcode 3.2";

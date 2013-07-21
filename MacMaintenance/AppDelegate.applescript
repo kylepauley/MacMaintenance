@@ -176,7 +176,7 @@ script AppDelegate
         end if
         -- Apache2 Webserver starten
         try
-            set settingApache2WebserverStarten to (do shell script "TESTVAR=`ps aux|grep /usr/sbin/httpd|wc -l` && echo $TESTVAR")
+            set settingApache2WebserverStarten to (do shell script "TESTVAR=`ps aux|grep http[d]|wc -l` && echo $TESTVAR")
         end try
         if (settingApache2WebserverStarten is greater than "0") then
             checkBoxApache2WebserverStarten's setState_(1)
