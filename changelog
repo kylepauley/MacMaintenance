@@ -1,3 +1,6 @@
+Version 3.3.5
+- Rechteproblem bei „Inaktiven Bereich im Arbeitsspeicher aufräumen“ behoben
+
 Version 3.3.4
 - Fehler bei der Anzeige des aktuellen Status von Apache2 behoben
 

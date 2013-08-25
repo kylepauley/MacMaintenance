@@ -426,7 +426,7 @@ script AppDelegate
     on InaktivenRAMleeren_(sender)
         spinner's startAnimation_(sender)
         try
-            do shell script "purge"
+            do shell script "purge" with administrator privileges
         end try
         spinner's stopAnimation_(sender)
     end InaktivenRAMleeren_
