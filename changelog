@@ -1,3 +1,10 @@
+Version 3.4
+- New feature added: „Enable Dark Dock“
+- New feature added: „Disable Spotlight Icon“
+- Enhanced compatibility with OS X 10.10 Yosemite
+- Cleaned up the graphical user interface
+- Some minor Bugfixes
+
 Version 3.3.5
 - Rechteproblem bei „Inaktiven Bereich im Arbeitsspeicher aufräumen“ behoben
 

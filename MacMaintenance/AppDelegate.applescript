@@ -2,14 +2,13 @@
 --  AppDelegate.applescript
 --  MacMaintenance
 --
---  Created by Philipp on 15.05.13.
---  Copyright (c) 2013 Mr Maintenance. All rights reserved.
+--  Initially created by Philipp on 15.05.13.
+--  Copyright (c) 2014 Philipp Noack. All rights reserved.
 --
 
 script AppDelegate
 	property parent : class "NSObject"
     -- Variablen setzen
-    property spinner : missing value
     property buttonPurgeMemory : missing value
     property SpeicherplatzCaches : missing value
     property toolbar : missing value
@@ -36,11 +35,13 @@ script AppDelegate
     property settingDockDurchsichtig : missing value
     property settingDock2D : missing value
     property settingDockSizePixel : 0
+    property settingDockDark : missing value
     property settingTimeMachineNetzlaufwerke : missing value
     property settingInitialSetup : missing value
     property settingPHP5eingebauterWebserver : missing value
     property settingFTPwiederAktivieren : missing value
     property settingApache2WebserverStarten : missing value
+    property settingDisableSpotlightIcon : missing value
     
     -- Checkboxen
     property checkBoxFinderHiddenFiles : missing value
@@ -52,14 +53,19 @@ script AppDelegate
     property checkBoxBildschirmfotoSchatten : missing value
     property checkBoxDockDurchsichtig : missing value
     property checkBoxDock2D : missing value
+    property checkBoxDockDark : missing value
     property checkBoxTimeMachineNetzlaufwerke : missing value
     property checkBoxInitialSetup : missing value
     property checkBoxPHP5eingebauterWebserver : missing value
     property checkBoxFTPwiederAktivieren : missing value
     property checkBoxApache2WebserverStarten : missing value
+    property checkBoxDisableSpotlightIcon : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
+        
+        -- Finder Toolbar Objekt hervorheben
+        toolbar's setSelectedItemIdentifier_("toolbarFinder")
         
         -- Feststellen welche Einstellungen momentan aktiv sind
         -- Finder Versteckte Dateien
@@ -85,11 +91,11 @@ script AppDelegate
         try
             set settingPapierkorbWarnung to (do shell script "defaults read com.apple.finder WarnOnEmptyTrash")
         end try
-        if settingPapierkorbWarnung is "1" then
-            checkBoxPapierkorbWarnung's setState_(1)
-        else
-            set settingPapierkorbWarnung to "0"
+        if settingPapierkorbWarnung is "0" then
             checkBoxPapierkorbWarnung's setState_(0)
+        else
+            set settingPapierkorbWarnung to "1"
+            checkBoxPapierkorbWarnung's setState_(1)
         end if
         -- Entfernte CD/DVD
         try
@@ -155,6 +161,17 @@ script AppDelegate
         try
             set settingDockSizePixel to (do shell script "defaults read com.apple.dock tilesize") as integer
         end try
+        -- Dock Dark Mode
+        try
+            set checkDockDark to (do shell script "defaults read NSGlobalDomain AppleInterfaceStyle")
+        end try
+        if checkDockDark is "Dark" then
+            set settingDockDark to "1"
+            checkBoxDockDark's setState_(1)
+        else
+            set settingDockDark to "0"
+            checkBoxDockDark's setState_(0)
+        end if
         -- TimeMachine auf Netzlaufwerke
         try
             set settingTimeMachineNetzlaufwerke to (do shell script "defaults read com.apple.systempreferences TMShowUnsupportedNetworkVolumes")
@@ -205,13 +222,23 @@ script AppDelegate
             checkBoxFTPwiederAktivieren's setState_(0)
         end if
         
+        -- Disable Spotlight Icon
+        try
+            set checkDisableSpotlightIcon to (do shell script "stat -f '%OLp' /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search")
+        end try
+        if checkDisableSpotlightIcon contains "755" then
+            set settingDisableSpotlightIcon to "0"
+            checkBoxDisableSpotlightIcon's setState_(0)
+        else
+            set settingDisableSpotlightIcon to "1"
+            checkBoxDisableSpotlightIcon's setState_(1)
+        end if
+        
         -- ######################################
         
-        -- Projektversion für die GUI
-        set projectVersion to current application's NSBundle's mainBundle()'s objectForInfoDictionaryKey_("CFBundleShortVersionString")
-        macMaintenanceVersion's setStringValue_(projectVersion)
-        
-        -- Deaktiviere Funktionen die unter Snow Leopard / Mavericks nicht verfügbar sind
+        -- Deaktiviere Funktionen die unter anderen Versionen nicht verfügbar sind
+        checkBoxDockDark's setEnabled_(false)
+        checkBoxDisableSpotlightIcon's setEnabled_(false)
         set productVersion to (do shell script "sw_vers -productVersion")
         if productVersion contains "10.6"
             buttonPurgeMemory's setEnabled_(false)
@@ -223,14 +250,16 @@ script AppDelegate
         else if productVersion contains "10.9"
             checkBoxDock2D's setEnabled_(false)
             checkBoxDockDurchsichtig's setEnabled_(false)
+        else if productVersion contains "10.10"
+            checkBoxDockDark's setEnabled_(true)
+            checkBoxDisableSpotlightIcon's setEnabled_(true)
+            checkBoxDock2D's setEnabled_(false)
+            checkBoxDockDurchsichtig's setEnabled_(false)
         end if
     
         -- Wie viel Speicherplatz belegen die Caches?
         set SpeicherplatzCachesinMB to do shell script "du -scm /Library/Caches/ /System/Library/Caches/ ~/Library/Caches/ | grep total | cut -f 1"
         SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
-    
-        -- Finder Toolbar Objekt hervorheben
-        toolbar's setSelectedItemIdentifier_("toolbarFinder")
 	end applicationWillFinishLaunching_
 
     -- MacMaintenance BEGIN
@@ -268,7 +297,6 @@ script AppDelegate
     
     -- Versteckte Dateien im Finder anzeigen
     on FinderVersteckteDateien_(sender)
-        spinner's startAnimation_(sender)
         if settingFinderHiddenFiles is "1" then
             do shell script "defaults write com.apple.finder AppleShowAllFiles -boolean FALSE && killall Finder"
             set settingFinderHiddenFiles to "0"
@@ -276,12 +304,10 @@ script AppDelegate
             do shell script "defaults write com.apple.finder AppleShowAllFiles -boolean TRUE && killall Finder"
             set settingFinderHiddenFiles to "1"
         end if
-        spinner's stopAnimation_(sender)
     end FinderVersteckteDateien_
     
     -- Library Ordner im Finder anzeigen
     on FinderLibraryOrdner_(sender)
-        spinner's startAnimation_(sender)
         if settingFinderLibraryOrdner contains "hidden" then
             do shell script "chflags nohidden ~/Library"
             set settingFinderLibraryOrdner to ""
@@ -289,12 +315,10 @@ script AppDelegate
             do shell script "chflags hidden ~/Library"
             set settingFinderLibraryOrdner to "hidden"
         end if
-        spinner's stopAnimation_(sender)
     end FinderLibraryOrdner_
     
     -- Nachfrage beim Leeren des Papierkorbes anzeigen
     on NachfragePapierkorbLeeren_(sender)
-        spinner's startAnimation_(sender)
         if settingPapierkorbWarnung is "1" then
             do shell script "defaults write com.apple.finder WarnOnEmptyTrash -boolean FALSE && killall Finder"
             set settingPapierkorbWarnung to "0"
@@ -302,12 +326,10 @@ script AppDelegate
             do shell script "defaults write com.apple.finder WarnOnEmptyTrash -boolean TRUE && killall Finder"
             set settingPapierkorbWarnung to "1"
         end if
-        spinner's stopAnimation_(sender)
     end NachfragePapierkorbLeeren_
     
     -- Entfernte CD/DVD aktivieren
     on EntfernteCDDVDaktivieren_(sender)
-        spinner's startAnimation_(sender)
         if settingEntfernteCDDVD is "1" then
             do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean FALSE && defaults write com.apple.NetworkBrowser ODSSupported -boolean FALSE && killall Finder"
             set settingEntfernteCDDVD to "0"
@@ -315,12 +337,10 @@ script AppDelegate
             do shell script "defaults write com.apple.finder EnableODiskBrowsing -boolean TRUE && defaults write com.apple.NetworkBrowser ODSSupported -boolean TRUE && killall Finder"
             set settingEntfernteCDDVD to "1"
         end if
-        spinner's stopAnimation_(sender)
     end EntfernteCDDVDaktivieren_
     
     -- Erweiterter Speichern unter Dialog
     on ErweiterterSpeichernUnterDialog_(sender)
-        spinner's startAnimation_(sender)
         if settingSpeichernUnterDialog is "1" then
             do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean FALSE && killall Finder"
             set settingSpeichernUnterDialog to "0"
@@ -328,12 +348,10 @@ script AppDelegate
             do shell script "defaults write -g NSNavPanelExpandedStateForSaveMode -boolean TRUE && killall Finder"
             set settingSpeichernUnterDialog to "1"
         end if
-        spinner's stopAnimation_(sender)
     end ErweiterterSpeichernUnterDialog_
     
     -- AirDrop auf nicht unterstützten Macs aktivieren
     on AirDropAktivieren_(sender)
-        spinner's startAnimation_(sender)
         if settingAirDrop is "1" then
             do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean FALSE && killall Finder"
             set settingAirDrop to "0"
@@ -341,12 +359,10 @@ script AppDelegate
             do shell script "defaults write com.apple.NetworkBrowser BrowseAllInterfaces -boolean TRUE && killall Finder"
             set settingAirDrop to "1"
         end if
-        spinner's stopAnimation_(sender)
     end AirDropAktivieren_
 
     -- Bildschirmfotos ohne Schatten
     on BildschirmfotosOhneSchatten_(sender)
-        spinner's startAnimation_(sender)
         if settingBildschirmfotoSchatten is "1" then
             try
                 do shell script "defaults write com.apple.screencapture disable-shadow -boolean FALSE && killall SystemUIServer && sleep 5"
@@ -358,14 +374,12 @@ script AppDelegate
                 set settingBildschirmfotoSchatten to "1"
             end try
         end if
-        spinner's stopAnimation_(sender)
     end BildschirmfotosOhneSchatten_
 
     -- ######################## DOCK ########################
     
     -- Ausgeblendete Programme durchsichtig anzeigen
     on AusgeblendeteProgrammeDurchsichtig_(sender)
-        spinner's startAnimation_(sender)
         if settingDockDurchsichtig is "1" then
             do shell script "defaults write com.apple.Dock showhidden -boolean FALSE && killall Dock"
             set settingDockDurchsichtig to "0"
@@ -373,12 +387,10 @@ script AppDelegate
             do shell script "defaults write com.apple.Dock showhidden -boolean TRUE && killall Dock"
             set settingDockDurchsichtig to "1"
         end if
-        spinner's stopAnimation_(sender)
     end AusgeblendeteProgrammeDurchsichtig_
     
     -- Dock im 2D Modus ausführen
     on Dockim2DModus_(sender)
-        spinner's startAnimation_(sender)
         if settingDock2D is "1"
             do shell script "defaults write com.apple.dock no-glass -boolean FALSE && killall Dock"
             set settingDock2D to "0"
@@ -386,12 +398,10 @@ script AppDelegate
             do shell script "defaults write com.apple.dock no-glass -boolean TRUE && killall Dock"
             set settingDock2D to "1"
         end if
-        spinner's stopAnimation_(sender)
     end Dockim2DModus_
 
     -- Dock Größe in Pixeln angeben
     on DockSizePixel_(sender)
-        spinner's startAnimation_(sender)
         try
             display dialog (localized string "DockSize") default answer settingDockSizePixel
             try
@@ -404,14 +414,23 @@ script AppDelegate
                 set answerDockSize to "0"
             end if
         end try
-        spinner's stopAnimation_(sender)
     end DockSizePixel_
+
+    -- Dunkles Dock aktivieren
+    on DockDarkMode_(sender)
+        if settingDockDark is "1"
+            do shell script "defaults write NSGlobalDomain AppleInterfaceStyle Light && killall Dock"
+            set settingDockDark to "0"
+        else
+            do shell script "defaults write NSGlobalDomain AppleInterfaceStyle Dark && killall Dock"
+            set settingDockDark to "1"
+        end if
+    end DockDarkMode_
 
     -- ######################## CACHES ########################
     
     -- Caches löschen
     on Cachesloeschen_(sender)
-        spinner's startAnimation_(sender)
         try
             do shell script "rm -rf /System/Library/Caches/*" with administrator privileges
             do shell script "rm -rf /Library/Caches/*" with administrator privileges
@@ -419,79 +438,63 @@ script AppDelegate
         end try
         set SpeicherplatzCachesinMB to do shell script "du -scm /Library/Caches/ /System/Library/Caches/ ~/Library/Caches/ | grep total | cut -f 1"
         SpeicherplatzCaches's setStringValue_("(ca. "&SpeicherplatzCachesinMB&" MB)")
-        spinner's stopAnimation_(sender)
     end Cachesloeschen_
     
     -- Inaktiven Bereich im Arbeitsspeicher aufräumen
     on InaktivenRAMleeren_(sender)
-        spinner's startAnimation_(sender)
-        try
+                try
             do shell script "purge" with administrator privileges
         end try
-        spinner's stopAnimation_(sender)
-    end InaktivenRAMleeren_
+            end InaktivenRAMleeren_
     
     -- Spotlight Index neu aufbauen
     on SpotlightIndexNeuAufbauen_(sender)
-        spinner's startAnimation_(sender)
         try
             do shell script "mdutil -i off / && mdutil -E / && mdutil -i on /" with administrator privileges
         end try
-        spinner's stopAnimation_(sender)
     end SpotlightIndexNeuAufbauen_
     
     -- Schriftarten Caches löschen
     on SchriftartenCachesNeuErstellen_(sender)
-        spinner's startAnimation_(sender)
         try
             do shell script "atsutil databases -remove" with administrator privileges
             do shell script "atsutil databases -removeUser"
         end try
-        spinner's stopAnimation_(sender)
     end SchriftartenCachesNeuErstellen_
     
     -- ######################## SYSTEM ########################
     
     -- Periodische Skripte ausführen
     on PeriodischeSkripteStarten_(sender)
-        spinner's startAnimation_(sender)
         try
             do shell script "periodic daily weekly monthly" with administrator privileges
         end try
-        spinner's stopAnimation_(sender)
     end PeriodischeSkripteStarten_
     
     -- Zugriffsrechte reparieren
     on ZugriffsrechteReparieren_(sender)
-        spinner's startAnimation_(sender)
         do shell script "diskutil repairPermissions /"
-        spinner's stopAnimation_(sender)
     end ZugriffsrechteReparieren_
        
     -- Drucksystem zurücksetzen
     on DrucksystemZuruecksetzen_(sender)
-        spinner's startAnimation_(sender)
         try
             do shell script "launchctl stop org.cups.cupsd && mv /etc/cups/cupsd.conf /etc/cups/cupsd.conf.backup && cp /etc/cups/cupsd.conf.default /etc/cups/cupsd.conf && if [ -f /etc/cups/printers.conf ]; then mv /etc/cups/printers.conf /etc/cups/printers.conf.backup; fi && rm -rf ~/Library/Printers/ && launchctl start org.cups.cupsd" with administrator privileges
         end try
-        spinner's stopAnimation_(sender)
     end DrucksystemZuruecksetzen_
     
     -- Drucksystem Admin öffnen
     on CUPSconfigadmin_(sender)
-        spinner's startAnimation_(sender)
         do shell script "if [ `cupsctl | grep WebInterface` != 'WebInterface=yes' ]; then cupsctl WebInterface=yes; fi"
         do shell script ""
         tell application "Safari"
             activate
             open location "http://127.0.0.1:631"
         end tell
-        spinner's stopAnimation_(sender)
     end CUPSconfigadmin_
     
     -- Time Machine Backups auf nicht unterstützte Laufwerke aktivieren
     on TimeMachineNetzlaufwerke_(sender)
-        spinner's startAnimation_(sender)
         if settingTimeMachineNetzlaufwerke is "1" then
             do shell script "defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -boolean FALSE"
             set settingTimeMachineNetzlaufwerke to "0"
@@ -499,19 +502,15 @@ script AppDelegate
             do shell script "defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes -boolean TRUE"
             set settingTimeMachineNetzlaufwerke to "1"
         end if
-        spinner's stopAnimation_(sender)
     end TimeMachineNetzlaufwerke_
     
     -- LaunchServiceDB zurücksetzen
     on LaunchServiceDBZuruecksetzen_(sender)
-        spinner's startAnimation_(sender)
         do shell script "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user"
-        spinner's stopAnimation_(sender)
     end LaunchServiceDBZuruecksetzen_
     
     -- Mac OS X Einrichtungsdialog zurücksetzen
     on AppleSetupDoneLoeschen_(sender)
-        spinner's startAnimation_(sender)
         if settingInitialSetup is "1" then
             try
                 do shell script "touch /var/db/.AppleSetupDone" with administrator privileges
@@ -527,12 +526,10 @@ script AppDelegate
                 checkBoxInitialSetup's setState_(0)
             end try
         end if
-        spinner's stopAnimation_(sender)
     end AppleSetupDoneLoeschen_
 
     -- Apache2 Webserver starten
     on Apache2WebserverStarten_(sender)
-        spinner's startAnimation_(sender)
         if settingApache2WebserverStarten is "0" then
             try
                 do shell script "apachectl start" with administrator privileges
@@ -548,12 +545,10 @@ script AppDelegate
                 checkBoxApache2WebserverStarten's setState_(1)
             end try
         end if
-        spinner's stopAnimation_(sender)
     end Apache2WebserverStarten_
 
     -- PHP5 im eingebauten Webserver aktivieren
     on PHP5imApacheAktivieren_(sender)
-        spinner's startAnimation_(sender)
         if settingPHP5eingebauterWebserver is "#" then
             try
                 do shell script "mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.tmp && cat /etc/apache2/httpd.conf.tmp | sed -e 's/#LoadModule php5_module/LoadModule php5_module/' > /etc/apache2/httpd.conf && rm /etc/apache2/httpd.conf.tmp" with administrator privileges
@@ -575,12 +570,10 @@ script AppDelegate
                 checkBoxPHP5eingebauterWebserver's setState_(1)
             end try
         end if
-        spinner's stopAnimation_(sender)
     end PHP5imApacheAktivieren_
     
     -- FTP Dateifreigabe wieder aktivieren (ab Lion)
     on FTPDateifreigabeAktivieren_(sender)
-        spinner's startAnimation_(sender)
         if settingFTPwiederAktivieren contains "1" then
             try
                 do shell script "launchctl unload -w /System/Library/LaunchDaemons/ftp.plist" with administrator privileges
@@ -598,15 +591,27 @@ script AppDelegate
                 checkBoxFTPwiederAktivieren's setState_(0)
             end try
         end if
-        spinner's stopAnimation_(sender)
     end FTPDateifreigabeAktivieren_
+
+    -- Disable Spotlight Icon
+    on DisableSpotlightIcon_(sender)
+        if settingDisableSpotlightIcon contains "0" then
+            try
+                do shell script "chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search" with administrator privileges
+                set settingDisableSpotlightIcon to "1"
+            end try
+        else
+            try
+                do shell script "chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search" with administrator privileges
+                set settingDisableSpotlightIcon to "0"
+            end try
+        end if
+    end DisableSpotlightIcon_
 
     -- ######################## WARTUNG ########################
 
     on wartungAusfuehren_(sender)
         display dialog (localized string "DialogCloseApps") with icon stop
-        
-        spinner's startAnimation_(sender)
         
         set aktionNachWartung to popUpButtonWartung's objectValue()
         set aktionNachWartung to aktionNachWartung as text
@@ -645,7 +650,6 @@ script AppDelegate
                 do shell script "rm -rf /System/Library/Caches/* ; rm -rf /Library/Caches/* ; rm -rf ~/Library/Caches/* ; periodic daily weekly monthly ; diskutil repairPermissions / ; shutdown -h now" with administrator privileges
             end if
         end try
-        spinner's stopAnimation_(sender)
     end wartungAusfuehren_
 
     -- MacMaintenance END
@@ -654,5 +658,4 @@ script AppDelegate
 		-- Insert code here to do any housekeeping before your application quits 
 		return current application's NSTerminateNow
 	end applicationShouldTerminate_
-	
 end script
