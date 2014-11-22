@@ -8,6 +8,7 @@
 
 script AppDelegate
 	property parent : class "NSObject"
+    
     -- Variablen setzen
     property buttonPurgeMemory : missing value
     property SpeicherplatzCaches : missing value
@@ -22,7 +23,6 @@ script AppDelegate
     property popUpButtonWartung : missing value
     property aktionNachWartung : missing value
     property answerDockSize : 0
-    property macMaintenanceVersion : missing value
         
     -- Einstellungen
     property settingFinderHiddenFiles : missing value
@@ -42,6 +42,7 @@ script AppDelegate
     property settingFTPwiederAktivieren : missing value
     property settingApache2WebserverStarten : missing value
     property settingDisableSpotlightIcon : missing value
+    property settingDisableLocalTimeMachine : missing value
     
     -- Checkboxen
     property checkBoxFinderHiddenFiles : missing value
@@ -60,6 +61,7 @@ script AppDelegate
     property checkBoxFTPwiederAktivieren : missing value
     property checkBoxApache2WebserverStarten : missing value
     property checkBoxDisableSpotlightIcon : missing value
+    property checkBoxDisableLocalTimeMachine : missing value
 	
 	on applicationWillFinishLaunching_(aNotification)
 		-- Insert code here to initialize your application before any files are opened
@@ -200,7 +202,6 @@ script AppDelegate
             else
             checkBoxApache2WebserverStarten's setState_(0)
         end if
-        
         -- PHP5 eingebauter Webserver
         try
             set settingPHP5eingebauterWebserver to (do shell script "cat /etc/apache2/httpd.conf |grep libphp5.so|colrm 2")
@@ -221,7 +222,6 @@ script AppDelegate
             set settingFTPwiederAktivieren to "0"
             checkBoxFTPwiederAktivieren's setState_(0)
         end if
-        
         -- Disable Spotlight Icon
         try
             set checkDisableSpotlightIcon to (do shell script "stat -f '%OLp' /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search")
@@ -233,28 +233,39 @@ script AppDelegate
             set settingDisableSpotlightIcon to "1"
             checkBoxDisableSpotlightIcon's setState_(1)
         end if
+        -- Disable local Time Machine backups
+        try
+            set settingDisableLocalTimeMachine to (do shell script "if [[ -d '/Volumes/MobileBackups' ]]; then echo '0'; else echo '1'; fi")
+        end try
+        if settingDisableLocalTimeMachine is "1" then
+            checkBoxDisableLocalTimeMachine's setState_(1)
+        else
+            checkBoxDisableLocalTimeMachine's setState_(0)
+        end if
         
         -- ######################################
         
         -- Deaktiviere Funktionen die unter anderen Versionen nicht verfügbar sind
         checkBoxDockDark's setEnabled_(false)
         checkBoxDisableSpotlightIcon's setEnabled_(false)
+        checkBoxDisableLocalTimeMachine's setEnabled_(false)
         set productVersion to (do shell script "sw_vers -productVersion")
-        if productVersion contains "10.6"
+        if productVersion starts with "10.6"
             buttonPurgeMemory's setEnabled_(false)
             checkBoxAirDrop's setEnabled_(false)
             checkBoxFTPwiederAktivieren's setEnabled_(false)
             checkBoxApache2WebserverStarten's setEnabled_(false)
-        else if productVersion contains "10.7"
+        else if productVersion starts with "10.7"
             checkBoxApache2WebserverStarten's setEnabled_(false)
-        else if productVersion contains "10.9"
+        else if productVersion starts with "10.9"
+            checkDisableLocalTimeMachine's setEnabled_(true)
             checkBoxDock2D's setEnabled_(false)
             checkBoxDockDurchsichtig's setEnabled_(false)
-        else if productVersion contains "10.10"
+        else if productVersion starts with "10.10"
             checkBoxDockDark's setEnabled_(true)
             checkBoxDisableSpotlightIcon's setEnabled_(true)
+            checkBoxDisableLocalTimeMachine's setEnabled_(true)
             checkBoxDock2D's setEnabled_(false)
-            checkBoxDockDurchsichtig's setEnabled_(false)
         end if
     
         -- Wie viel Speicherplatz belegen die Caches?
@@ -381,10 +392,10 @@ script AppDelegate
     -- Ausgeblendete Programme durchsichtig anzeigen
     on AusgeblendeteProgrammeDurchsichtig_(sender)
         if settingDockDurchsichtig is "1" then
-            do shell script "defaults write com.apple.Dock showhidden -boolean FALSE && killall Dock"
+            do shell script "defaults write com.apple.Dock showhidden -boolean FALSE && sleep 1 && killall Dock"
             set settingDockDurchsichtig to "0"
         else
-            do shell script "defaults write com.apple.Dock showhidden -boolean TRUE && killall Dock"
+            do shell script "defaults write com.apple.Dock showhidden -boolean TRUE && sleep 1 && killall Dock"
             set settingDockDurchsichtig to "1"
         end if
     end AusgeblendeteProgrammeDurchsichtig_
@@ -445,7 +456,7 @@ script AppDelegate
                 try
             do shell script "purge" with administrator privileges
         end try
-            end InaktivenRAMleeren_
+    end InaktivenRAMleeren_
     
     -- Spotlight Index neu aufbauen
     on SpotlightIndexNeuAufbauen_(sender)
@@ -608,6 +619,21 @@ script AppDelegate
         end if
     end DisableSpotlightIcon_
 
+    -- Disable local Time Machine backups
+    on DisableLocalTimeMachine_(sender)
+        if settingDisableLocalTimeMachine is "1" then
+            try
+                do shell script "tmutil enablelocal" with administrator privileges
+                set settingDisableLocalTimeMachine to "0"
+            end try
+        else
+            try
+                do shell script "tmutil disablelocal" with administrator privileges
+                set settingDisableLocalTimeMachine to "1"
+            end try
+        end if
+    end DisableLocalTimeMachine_
+
     -- ######################## WARTUNG ########################
 
     on wartungAusfuehren_(sender)
@@ -653,7 +679,11 @@ script AppDelegate
     end wartungAusfuehren_
 
     -- MacMaintenance END
-	
+
+    on applicationShouldTerminateAfterLastWindowClosed_(sender)
+        return true
+    end applicationShouldTerminateAfterLastWindowClosed_
+
 	on applicationShouldTerminate_(sender)
 		-- Insert code here to do any housekeeping before your application quits 
 		return current application's NSTerminateNow
